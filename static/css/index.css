@@ -84,7 +84,7 @@ a:focus-visible {
 
 .title-sub {
   color: var(--ink);
-  letter-spacing: -0.03em;
+  letter-spacing: 0.02em;
   margin-top: 0.18rem;
 }
 
@@ -595,6 +595,8 @@ a:focus-visible {
   pointer-events: none;
   position: absolute;
   right: 0.65rem;
+  max-height: calc(100% - 1.3rem);
+  overflow-y: auto;
   text-align: left;
   transform: translateY(0.5rem);
   transition: opacity 170ms ease, transform 170ms ease;
@@ -606,13 +608,13 @@ a:focus-visible {
   font-family: "Google Sans", "Noto Sans", sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.055em;
   margin-bottom: 0.2rem;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .case-overlay .case-kicker {
-  color: #f3a5b2;
+  color: #ff6f85;
 }
 
 .case-overlay strong {
@@ -971,12 +973,16 @@ a:focus-visible {
 
   .title-main,
   .title-sub {
-    font-size: clamp(0.9rem, 4.2vw, 1.2rem);
-    letter-spacing: -0.035em;
+    font-size: clamp(0.75rem, 3.45vw, 1.2rem);
+    white-space: nowrap;
+  }
+
+  .title-main {
+    letter-spacing: -0.045em;
   }
 
   .title-sub {
-    white-space: normal;
+    letter-spacing: 0.005em;
   }
 
   .publication-authors {

@@ -46,9 +46,9 @@
     <section class="hero publication-header">
       <div class="hero-body">
         <div class="container project-column has-text-centered">
-          <h1 class="title is-1 publication-title" aria-label="MedGEN-Bench: Contextually entangled benchmark for open-ended multimodal medical generation">
-            <span class="title-main">MedGEN-Bench</span>
-            <span class="title-sub">Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation</span>
+          <h1 class="title is-1 publication-title" aria-label="MedGEN-Bench: Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation">
+            <span class="title-main">MedGEN-Bench: Contextually Entangled Benchmark</span>
+            <span class="title-sub">for Open-Ended Multimodal Medical Generation</span>
           </h1>
 
           <div class="is-size-5 publication-authors" role="group" aria-label="Authors">
@@ -152,15 +152,15 @@
     <section class="section content-section examples-section" id="examples">
       <div class="container project-column">
         <h2 class="title is-3 has-text-centered">Representative Image-Editing Pairs</h2>
-        <p class="section-deck gallery-intro has-text-centered">Each row shows a benchmark input and its reference target from the released dataset. Hover over an image, or focus it with the keyboard, to view its description.</p>
+        <p class="section-deck gallery-intro has-text-centered">The evaluation snapshot reported in this manuscript comprises 6,422 expert-reviewed image–text pairs spanning 6 canonical imaging modalities, 15 clinical tasks, and 26 named subtasks.</p>
 
         <div class="benchmark-gallery research-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Representative MedGEN-Bench image-editing cases" tabindex="0">
-          <p class="visually-hidden">The seven-page gallery rotates automatically. Use the previous and next buttons, page selectors, or left and right arrow keys to browse.</p>
+          <p class="visually-hidden">The ten-page gallery rotates automatically. Use the previous and next buttons, page selectors, or left and right arrow keys to browse.</p>
           <div class="gallery-frame">
             <button class="gallery-arrow gallery-prev" type="button" data-carousel-prev aria-label="Previous gallery page">‹</button>
             <div class="gallery-viewport">
-              <div class="gallery-slide is-active" data-carousel-slide data-carousel-label="Radiography and liver ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 1 of 7">
-                <div class="gallery-table" role="table" aria-label="Radiography and liver ultrasound examples">
+              <div class="gallery-slide is-active" data-carousel-slide data-carousel-label="Radiography · I" role="group" aria-roledescription="slide" aria-label="Gallery page 1 of 10">
+                <div class="gallery-table" role="table" aria-label="Radiography examples, page one">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Benchmark Input</div>
                     <div role="columnheader"><strong>Reference Target</strong></div>
@@ -169,20 +169,20 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/chest-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution chest radiograph input">
-                          <img src="static/images/samples/chest-input.jpg" alt="Input portable chest radiograph." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Radiography</span><strong>Chest radiograph annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the right-basilar opacity and left-basilar linear opacities.</span></span>
+                        <a class="gallery-media" href="static/images/samples/chest-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution chest radiograph benchmark input">
+                          <img src="static/images/samples/chest-input.jpg" alt="Benchmark input for chest radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Radiograph image of Lungs with detailed labels for the Patchy opacity within the right lung base, linear opacities in the left lung base compatible with subsegmental atelectasis, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Portable chest radiograph</figcaption>
+                        <figcaption>Radiography</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
                         <a class="gallery-media" href="static/images/samples/chest-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution chest radiograph reference target">
-                          <img src="static/images/samples/chest-target.jpg" alt="Reference chest radiograph target with opacity and atelectasis annotation." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Opacity and atelectasis annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Adds structured findings for the right-basilar opacity and left-basilar linear opacities.</span></span>
+                          <img src="static/images/samples/chest-target.jpg" alt="Reference target for chest radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Radiograph image of Lungs with detailed labels for the Patchy opacity within the right lung base, linear opacities in the left lung base compatible with subsegmental atelectasis, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Opacity and atelectasis annotation</figcaption>
+                        <figcaption>Radiography</figcaption>
                       </figure>
                     </div>
                   </div>
@@ -190,130 +190,283 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/liver-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution liver ultrasound input">
-                          <img src="static/images/samples/liver-input.jpg" alt="Input liver ultrasound showing a measured solid mass." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Liver mass annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the solid liver mass and its anatomical location.</span></span>
+                        <a class="gallery-media" href="static/images/samples/pulmonary-edema-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pulmonary edema radiograph benchmark input">
+                          <img src="static/images/samples/pulmonary-edema-input.jpg" alt="Benchmark input for pulmonary edema radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Radiograph image of lungs with detailed labels for the worsening left lung opacities, improvement of right lung opacities, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Measured 4 × 3 cm liver mass</figcaption>
+                        <figcaption>Radiography</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pulmonary-edema-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pulmonary edema radiograph reference target">
+                          <img src="static/images/samples/pulmonary-edema-target.jpg" alt="Reference target for pulmonary edema radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Radiograph image of lungs with detailed labels for the worsening left lung opacities, improvement of right lung opacities, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>Radiography</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Radiography · II" role="group" aria-roledescription="slide" aria-label="Gallery page 2 of 10" hidden>
+                <div class="gallery-table" role="table" aria-label="Radiography examples, page two">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pleural-effusion-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pleural effusion radiograph benchmark input">
+                          <img src="static/images/samples/pleural-effusion-input.jpg" alt="Benchmark input for pleural effusion radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Radiograph image of lung with detailed labels for the right pleural effusion, atelectasis, lung mass obscured by effusion, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>Radiography</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pleural-effusion-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pleural effusion radiograph reference target">
+                          <img src="static/images/samples/pleural-effusion-target.jpg" alt="Reference target for pleural effusion radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Radiograph image of lung with detailed labels for the right pleural effusion, atelectasis, lung mass obscured by effusion, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>Radiography</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pneumothorax-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pneumothorax follow-up radiograph benchmark input">
+                          <img src="static/images/samples/pneumothorax-input.jpg" alt="Benchmark input for pneumothorax follow-up radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Radiograph image of lungs with detailed labels for the right apical pneumothorax (previously present, now resolved), including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>Radiography</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pneumothorax-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pneumothorax follow-up radiograph reference target">
+                          <img src="static/images/samples/pneumothorax-target.jpg" alt="Reference target for pneumothorax follow-up radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Radiograph image of lungs with detailed labels for the right apical pneumothorax (previously present, now resolved), including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>Radiography</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="CT" role="group" aria-roledescription="slide" aria-label="Gallery page 3 of 10" hidden>
+                <div class="gallery-table" role="table" aria-label="CT examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/ct-lung-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution thoracic CT benchmark input">
+                          <img src="static/images/samples/ct-lung-input.jpg" alt="Benchmark input for thoracic CT." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this CT image of lungs with detailed labels for the stenosis at the origin of the tertiary tracheal bronchus, hyperinflated left upper lobe, partially atelectatic left upper and lower lobes, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>CT</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/ct-lung-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution thoracic CT reference target">
+                          <img src="static/images/samples/ct-lung-target.jpg" alt="Reference target for thoracic CT." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this CT image of lungs with detailed labels for the stenosis at the origin of the tertiary tracheal bronchus, hyperinflated left upper lobe, partially atelectatic left upper and lower lobes, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>CT</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/ct-parotid-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution parotid-gland CT benchmark input">
+                          <img src="static/images/samples/ct-parotid-input.jpg" alt="Benchmark input for parotid-gland CT." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this CT image of right parotid gland with detailed labels for the multifocal perineural and intraneural invasion, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>CT</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/ct-parotid-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution parotid-gland CT reference target">
+                          <img src="static/images/samples/ct-parotid-target.jpg" alt="Reference target for parotid-gland CT." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this CT image of right parotid gland with detailed labels for the multifocal perineural and intraneural invasion, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>CT</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="MRI" role="group" aria-roledescription="slide" aria-label="Gallery page 4 of 10" hidden>
+                <div class="gallery-table" role="table" aria-label="MRI examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/mri-heart-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac MRI benchmark input">
+                          <img src="static/images/samples/mri-heart-input.jpg" alt="Benchmark input for cardiac MRI." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Magnetic_Resonance_Imaging image of heart with detailed labels for the significant myocardial wall thickening and near-complete cavity obliteration, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>MRI</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/mri-heart-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac MRI reference target">
+                          <img src="static/images/samples/mri-heart-target.jpg" alt="Reference target for cardiac MRI." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Magnetic_Resonance_Imaging image of heart with detailed labels for the significant myocardial wall thickening and near-complete cavity obliteration, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>MRI</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/mri-brain-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution brain MRI benchmark input">
+                          <img src="static/images/samples/mri-brain-input.jpg" alt="Benchmark input for brain MRI." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Magnetic_Resonance_Imaging image of brain with detailed labels for the vasogenic edema involving the bilateral cerebral hemispheres, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>MRI</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/mri-brain-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution brain MRI reference target">
+                          <img src="static/images/samples/mri-brain-target.jpg" alt="Reference target for brain MRI." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Magnetic_Resonance_Imaging image of brain with detailed labels for the vasogenic edema involving the bilateral cerebral hemispheres, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>MRI</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Ultrasound · I" role="group" aria-roledescription="slide" aria-label="Gallery page 5 of 10" hidden>
+                <div class="gallery-table" role="table" aria-label="Ultrasound examples, page one">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/liver-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution liver ultrasound benchmark input">
+                          <img src="static/images/samples/liver-input.jpg" alt="Benchmark input for liver ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of liver with detailed labels for the solid mass measuring 4 x 3 cm with well-defined edges, ovular and bilobate shape, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
                         <a class="gallery-media" href="static/images/samples/liver-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution liver ultrasound reference target">
-                          <img src="static/images/samples/liver-target.jpg" alt="Reference liver ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Structured liver mass annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the organ, lesion, diagnostic impression, and left-lobe location.</span></span>
+                          <img src="static/images/samples/liver-target.jpg" alt="Reference target for liver ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of liver with detailed labels for the solid mass measuring 4 x 3 cm with well-defined edges, ovular and bilobate shape, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="gallery-slide" data-carousel-slide data-carousel-label="Abdominal and obstetric ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 2 of 7" hidden>
-                <div class="gallery-table" role="table" aria-label="Abdominal and obstetric ultrasound examples">
-                  <div class="gallery-grid gallery-head" role="row">
-                    <div role="columnheader">Benchmark Input</div>
-                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/appendix-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution appendix ultrasound input">
-                          <img src="static/images/samples/appendix-input.jpg" alt="Input right-lower-quadrant ultrasound of the appendix." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Appendix annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the distended appendix and periappendiceal edema.</span></span>
+                        <a class="gallery-media" href="static/images/samples/appendix-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution appendix ultrasound benchmark input">
+                          <img src="static/images/samples/appendix-input.jpg" alt="Benchmark input for appendix ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Appendix with detailed labels for the Distended Appendix With Hyperemia, Missing Visualization Of Bowel Layers, And Perityphlitic Edema, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Appendix ultrasound</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
                         <a class="gallery-media" href="static/images/samples/appendix-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution appendix ultrasound reference target">
-                          <img src="static/images/samples/appendix-target.jpg" alt="Reference appendix ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Chronic appendicitis annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the appendix, distension and edema, diagnosis, and right-lower-quadrant location.</span></span>
+                          <img src="static/images/samples/appendix-target.jpg" alt="Reference target for appendix ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Appendix with detailed labels for the Distended Appendix With Hyperemia, Missing Visualization Of Bowel Layers, And Perityphlitic Edema, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Ultrasound · II" role="group" aria-roledescription="slide" aria-label="Gallery page 6 of 10" hidden>
+                <div class="gallery-table" role="table" aria-label="Ultrasound examples, page two">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/csep-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution uterine ultrasound input">
-                          <img src="static/images/samples/csep-input.jpg" alt="Input sagittal uterine ultrasound." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Cesarean-scar pregnancy annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Identify the gestational sac at the previous cesarean-section scar.</span></span>
+                        <a class="gallery-media" href="static/images/samples/csep-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution uterine ultrasound benchmark input">
+                          <img src="static/images/samples/csep-input.jpg" alt="Benchmark input for uterine ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Uterus with detailed labels for the Gestational Sac Located At The Site Of A Previous Cesarean Section Scar, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Sagittal uterine ultrasound</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
                         <a class="gallery-media" href="static/images/samples/csep-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution uterine ultrasound reference target">
-                          <img src="static/images/samples/csep-target.jpg" alt="Reference uterine ultrasound target identifying a cesarean-scar ectopic pregnancy." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Cesarean-scar ectopic pregnancy</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the uterus, gestational sac, CSEP diagnosis, and scar-site location.</span></span>
+                          <img src="static/images/samples/csep-target.jpg" alt="Reference target for uterine ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Uterus with detailed labels for the Gestational Sac Located At The Site Of A Previous Cesarean Section Scar, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="gallery-slide" data-carousel-slide data-carousel-label="Hepatic and renal imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 3 of 7" hidden>
-                <div class="gallery-table" role="table" aria-label="Hepatic and renal imaging examples">
-                  <div class="gallery-grid gallery-head" role="row">
-                    <div role="columnheader">Benchmark Input</div>
-                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/hepatic-angioma-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution hepatic ultrasound input">
-                          <img src="static/images/samples/hepatic-angioma-input.jpg" alt="Input paired liver ultrasound views." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Hepatic lesion annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the hypoechoic lesion in the seventh liver segment.</span></span>
+                        <a class="gallery-media" href="static/images/samples/hepatic-angioma-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution hepatic ultrasound benchmark input">
+                          <img src="static/images/samples/hepatic-angioma-input.jpg" alt="Benchmark input for hepatic ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Liver with detailed labels for the Hypoechogenic Area In The Seventh Liver Segment, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Paired liver ultrasound views</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
                         <a class="gallery-media" href="static/images/samples/hepatic-angioma-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution hepatic ultrasound reference target">
-                          <img src="static/images/samples/hepatic-angioma-target.jpg" alt="Reference liver ultrasound target with lesion, diagnosis, and location annotation." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Hepatic angioma annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the liver lesion, hepatic angioma diagnosis, and seventh-segment location.</span></span>
+                          <img src="static/images/samples/hepatic-angioma-target.jpg" alt="Reference target for hepatic ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Liver with detailed labels for the Hypoechogenic Area In The Seventh Liver Segment, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
-                      </figure>
-                    </div>
-                  </div>
-
-                  <div class="gallery-grid gallery-row" role="row">
-                    <div class="gallery-cell" role="cell">
-                      <figure>
-                        <a class="gallery-media" href="static/images/samples/pathology-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney histopathology input">
-                          <img src="static/images/samples/pathology-input.jpg" alt="Input kidney histopathology image." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Pathology</span><strong>Renal tumor annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Label neoplastic cells in the renal cortex.</span></span>
-                        </a>
-                        <figcaption><span class="cell-label">Input</span>Kidney histopathology</figcaption>
-                      </figure>
-                    </div>
-                    <div class="gallery-cell" role="cell">
-                      <figure>
-                        <a class="gallery-media" href="static/images/samples/pathology-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney pathology reference target">
-                          <img src="static/images/samples/pathology-target.jpg" alt="Reference kidney pathology target identifying neoplastic cells and clear-cell renal cell carcinoma." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Clear-cell renal carcinoma annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records neoplastic cells, the diagnosis, and their renal-cortex location.</span></span>
-                        </a>
-                        <figcaption><span class="cell-label">Target</span>Cell type · Diagnosis · Renal cortex</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="gallery-slide" data-carousel-slide data-carousel-label="Soft-tissue and abdominal ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 4 of 7" hidden>
-                <div class="gallery-table" role="table" aria-label="Soft-tissue and abdominal ultrasound examples">
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Ultrasound · III" role="group" aria-roledescription="slide" aria-label="Gallery page 7 of 10" hidden>
+                <div class="gallery-table" role="table" aria-label="Ultrasound examples, page three">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Benchmark Input</div>
                     <div role="columnheader"><strong>Reference Target</strong></div>
@@ -322,20 +475,20 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/umbilicus-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical ultrasound input">
-                          <img src="static/images/samples/umbilicus-input.jpg" alt="Input ultrasound of subcutaneous soft tissue at the umbilicus." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Umbilical lesion annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the indeterminate solid and cystic lesion.</span></span>
+                        <a class="gallery-media" href="static/images/samples/umbilicus-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical soft-tissue ultrasound benchmark input">
+                          <img src="static/images/samples/umbilicus-input.jpg" alt="Benchmark input for umbilical soft-tissue ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Subcutaneous Soft Tissues At The Umbilicus with detailed labels for the Indeterminate Solid And Cystic Lesion In The Subcutaneous Soft Tissues At The Umbilicus, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Umbilical soft-tissue ultrasound</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/umbilicus-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical ultrasound reference target">
-                          <img src="static/images/samples/umbilicus-target.jpg" alt="Reference umbilical ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Umbilical lesion annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the organ, mixed solid-cystic lesion, diagnosis, and umbilical location.</span></span>
+                        <a class="gallery-media" href="static/images/samples/umbilicus-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical soft-tissue ultrasound reference target">
+                          <img src="static/images/samples/umbilicus-target.jpg" alt="Reference target for umbilical soft-tissue ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Subcutaneous Soft Tissues At The Umbilicus with detailed labels for the Indeterminate Solid And Cystic Lesion In The Subcutaneous Soft Tissues At The Umbilicus, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                   </div>
@@ -343,28 +496,28 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/abdomen-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution abdominal ultrasound input">
-                          <img src="static/images/samples/abdomen-input.jpg" alt="Input middle-right epigastric ultrasound." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Abdominal follow-up annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the middle-right epigastric finding and follow-up impression.</span></span>
+                        <a class="gallery-media" href="static/images/samples/abdomen-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution abdominal ultrasound benchmark input">
+                          <img src="static/images/samples/abdomen-input.jpg" alt="Benchmark input for abdominal ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Abdomen with detailed labels for the Abdominal lesions with increased echogenicity in adipose tissue, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Abdominal ultrasound</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
                         <a class="gallery-media" href="static/images/samples/abdomen-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution abdominal ultrasound reference target">
-                          <img src="static/images/samples/abdomen-target.jpg" alt="Reference abdominal ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Abdominal follow-up annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the abdominal finding, follow-up impression, and middle-right epigastric location.</span></span>
+                          <img src="static/images/samples/abdomen-target.jpg" alt="Reference target for abdominal ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Abdomen with detailed labels for the Abdominal lesions with increased echogenicity in adipose tissue, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="gallery-slide" data-carousel-slide data-carousel-label="Pulmonary and cardiac imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 5 of 7" hidden>
-                <div class="gallery-table" role="table" aria-label="Pulmonary and cardiac imaging examples">
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Ultrasound · IV" role="group" aria-roledescription="slide" aria-label="Gallery page 8 of 10" hidden>
+                <div class="gallery-table" role="table" aria-label="Ultrasound examples, page four">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Benchmark Input</div>
                     <div role="columnheader"><strong>Reference Target</strong></div>
@@ -373,49 +526,49 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pulmonary-edema-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pulmonary edema radiograph input">
-                          <img src="static/images/samples/pulmonary-edema-input.jpg" alt="Input semi-erect portable chest radiograph." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Radiography</span><strong>Pulmonary edema annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the bilateral pulmonary opacities and their distribution.</span></span>
+                        <a class="gallery-media" href="static/images/samples/cardiac-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac ultrasound benchmark input">
+                          <img src="static/images/samples/cardiac-input.jpg" alt="Benchmark input for cardiac ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Left Ventricle with detailed labels for the Large Intra Lv Horseshoe Thrombus, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Semi-erect chest radiograph</figcaption>
-                      </figure>
-                    </div>
-                    <div class="gallery-cell" role="cell">
-                      <figure>
-                        <a class="gallery-media" href="static/images/samples/pulmonary-edema-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pulmonary edema reference target">
-                          <img src="static/images/samples/pulmonary-edema-target.jpg" alt="Reference chest radiograph target describing pulmonary edema and its distribution." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Pulmonary edema annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the lung opacities, pulmonary edema diagnosis, and bilateral distribution.</span></span>
-                        </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
-                      </figure>
-                    </div>
-                  </div>
-
-                  <div class="gallery-grid gallery-row" role="row">
-                    <div class="gallery-cell" role="cell">
-                      <figure>
-                        <a class="gallery-media" href="static/images/samples/cardiac-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac ultrasound input">
-                          <img src="static/images/samples/cardiac-input.jpg" alt="Input cardiac ultrasound with ventricular measurements." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Echocardiography</span><strong>Left-ventricular thrombus annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the intra-left-ventricular thrombus and its anatomical location.</span></span>
-                        </a>
-                        <figcaption><span class="cell-label">Input</span>Cardiac ultrasound</figcaption>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
                         <a class="gallery-media" href="static/images/samples/cardiac-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac ultrasound reference target">
-                          <img src="static/images/samples/cardiac-target.jpg" alt="Reference cardiac ultrasound target identifying a left-ventricular thrombus and its location." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Left-ventricular thrombus annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the thrombus, dilated cardiomyopathy diagnosis, and intra-cardiac location.</span></span>
+                          <img src="static/images/samples/cardiac-target.jpg" alt="Reference target for cardiac ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of Left Ventricle with detailed labels for the Large Intra Lv Horseshoe Thrombus, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                        <figcaption>Ultrasound</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/breast-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast ultrasound panel benchmark input">
+                          <img src="static/images/samples/breast-input.jpg" alt="Benchmark input for breast ultrasound panel." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of breast with detailed labels for the soft tissue mass with calcifications, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>Ultrasound</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/breast-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast ultrasound panel reference target">
+                          <img src="static/images/samples/breast-target.jpg" alt="Reference target for breast ultrasound panel." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Ultrasound image of breast with detailed labels for the soft tissue mass with calcifications, including anatomical landmarks and diagnostic findings</span></span>
+                        </a>
+                        <figcaption>Ultrasound</figcaption>
                       </figure>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="gallery-slide" data-carousel-slide data-carousel-label="Breast and pleural imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 6 of 7" hidden>
-                <div class="gallery-table" role="table" aria-label="Breast and pleural imaging examples">
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Pathology" role="group" aria-roledescription="slide" aria-label="Gallery page 9 of 10" hidden>
+                <div class="gallery-table" role="table" aria-label="Pathology examples">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Benchmark Input</div>
                     <div role="columnheader"><strong>Reference Target</strong></div>
@@ -424,20 +577,20 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/breast-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast imaging input">
-                          <img src="static/images/samples/breast-input.jpg" alt="Input panel containing mammography, ultrasound, and elastography views of a breast lesion." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Breast imaging</span><strong>Breast lesion annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the left-breast mass and associated calcifications.</span></span>
+                        <a class="gallery-media" href="static/images/samples/pathology-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney histopathology benchmark input">
+                          <img src="static/images/samples/pathology-input.jpg" alt="Benchmark input for kidney histopathology." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Pathology image of Kidney with detailed labels for the Neoplastic Cells, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Mammography · Ultrasound · Elastography</figcaption>
+                        <figcaption>Pathology</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/breast-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast imaging reference target">
-                          <img src="static/images/samples/breast-target.jpg" alt="Reference breast imaging target identifying a calcified soft-tissue mass in the left breast." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Calcified breast lesion annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the mass, suspected malignancy, and left-breast location.</span></span>
+                        <a class="gallery-media" href="static/images/samples/pathology-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney histopathology reference target">
+                          <img src="static/images/samples/pathology-target.jpg" alt="Reference target for kidney histopathology." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Pathology image of Kidney with detailed labels for the Neoplastic Cells, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Lesion · Diagnostic impression · Location</figcaption>
+                        <figcaption>Pathology</figcaption>
                       </figure>
                     </div>
                   </div>
@@ -445,28 +598,28 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pleural-effusion-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pleural effusion radiograph input">
-                          <img src="static/images/samples/pleural-effusion-input.jpg" alt="Input portable chest radiograph with a right-sided pleural effusion." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Radiography</span><strong>Pleural effusion annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the right pleural effusion and associated atelectatic change.</span></span>
+                        <a class="gallery-media" href="static/images/samples/bone-marrow-input.png" target="_blank" rel="noopener" aria-label="Open the full-resolution bone-marrow pathology benchmark input">
+                          <img src="static/images/samples/bone-marrow-input.png" alt="Benchmark input for bone-marrow pathology." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Pathology image of Bone Marrow with detailed labels for the Homogenous population of small cells consistent with lymphoblasts, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Portable chest radiograph</figcaption>
+                        <figcaption>Pathology</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pleural-effusion-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pleural effusion reference target">
-                          <img src="static/images/samples/pleural-effusion-target.jpg" alt="Reference chest radiograph target describing a right pleural effusion and associated findings." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Pleural effusion annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the right pleural effusion, associated atelectasis, and bilateral findings.</span></span>
+                        <a class="gallery-media" href="static/images/samples/bone-marrow-target.png" target="_blank" rel="noopener" aria-label="Open the full-resolution bone-marrow pathology reference target">
+                          <img src="static/images/samples/bone-marrow-target.png" alt="Reference target for bone-marrow pathology." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">anatomical-annotation</span><strong>Region-based Annotations</strong><span class="case-instruction">Annotate this Pathology image of Bone Marrow with detailed labels for the Homogenous population of small cells consistent with lymphoblasts, including anatomical landmarks and diagnostic findings</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnostic impression · Location</figcaption>
+                        <figcaption>Pathology</figcaption>
                       </figure>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="gallery-slide" data-carousel-slide data-carousel-label="Pneumothorax follow-up" role="group" aria-roledescription="slide" aria-label="Gallery page 7 of 7" hidden>
-                <div class="gallery-table" role="table" aria-label="Pneumothorax follow-up example">
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Clinical Photo" role="group" aria-roledescription="slide" aria-label="Gallery page 10 of 10" hidden>
+                <div class="gallery-table" role="table" aria-label="Clinical Photo examples">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Benchmark Input</div>
                     <div role="columnheader"><strong>Reference Target</strong></div>
@@ -475,20 +628,41 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pneumothorax-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pneumothorax follow-up radiograph input">
-                          <img src="static/images/samples/pneumothorax-input.jpg" alt="Input portable chest radiograph for pneumothorax follow-up." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Radiography</span><strong>Pneumothorax follow-up annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the prior right apical pneumothorax and current pulmonary findings.</span></span>
+                        <a class="gallery-media" href="static/images/samples/clinical-photo-1-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution clinical photograph contrast enhancement benchmark input">
+                          <img src="static/images/samples/clinical-photo-1-input.jpg" alt="Benchmark input for clinical photograph contrast enhancement." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">contrast-enhancement</span><strong>Contrast Enhancement</strong><span class="case-instruction">Improve the visual quality of this Clinical Photo scan through advanced contrast enhancement while preserving diagnostic information</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Input</span>Portable chest radiograph</figcaption>
+                        <figcaption>Clinical Photo</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pneumothorax-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pneumothorax follow-up reference target">
-                          <img src="static/images/samples/pneumothorax-target.jpg" alt="Reference chest radiograph target describing the resolved pneumothorax and current lung findings." loading="lazy">
-                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Pneumothorax follow-up annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the resolved right apical pneumothorax and current bilateral lung findings.</span></span>
+                        <a class="gallery-media" href="static/images/samples/clinical-photo-1-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution clinical photograph contrast enhancement reference target">
+                          <img src="static/images/samples/clinical-photo-1-target.jpg" alt="Reference target for clinical photograph contrast enhancement." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">contrast-enhancement</span><strong>Contrast Enhancement</strong><span class="case-instruction">Improve the visual quality of this Clinical Photo scan through advanced contrast enhancement while preserving diagnostic information</span></span>
                         </a>
-                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                        <figcaption>Clinical Photo</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/clinical-photo-2-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution clinical photograph contrast enhancement benchmark input">
+                          <img src="static/images/samples/clinical-photo-2-input.jpg" alt="Benchmark input for clinical photograph contrast enhancement." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">contrast-enhancement</span><strong>Contrast Enhancement</strong><span class="case-instruction">Enhance the contrast of this Clinical Photo image using advanced image processing algorithms for improved diagnostic visibility</span></span>
+                        </a>
+                        <figcaption>Clinical Photo</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/clinical-photo-2-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution clinical photograph contrast enhancement reference target">
+                          <img src="static/images/samples/clinical-photo-2-target.jpg" alt="Reference target for clinical photograph contrast enhancement." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">contrast-enhancement</span><strong>Contrast Enhancement</strong><span class="case-instruction">Enhance the contrast of this Clinical Photo image using advanced image processing algorithms for improved diagnostic visibility</span></span>
+                        </a>
+                        <figcaption>Clinical Photo</figcaption>
                       </figure>
                     </div>
                   </div>
@@ -508,9 +682,12 @@
                 <button class="gallery-dot" type="button" data-carousel-dot="4" aria-label="Show gallery page 5" aria-pressed="false"></button>
                 <button class="gallery-dot" type="button" data-carousel-dot="5" aria-label="Show gallery page 6" aria-pressed="false"></button>
                 <button class="gallery-dot" type="button" data-carousel-dot="6" aria-label="Show gallery page 7" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="7" aria-label="Show gallery page 8" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="8" aria-label="Show gallery page 9" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="9" aria-label="Show gallery page 10" aria-pressed="false"></button>
               </div>
             </div>
-            <p class="gallery-status visually-hidden" data-carousel-status aria-live="polite">1 / 7 · Radiography and liver ultrasound</p>
+            <p class="gallery-status visually-hidden" data-carousel-status aria-live="polite">1 / 10 · Radiography · I</p>
           </div>
         </div>
       </div>
