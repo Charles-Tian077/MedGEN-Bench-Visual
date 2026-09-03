@@ -152,15 +152,15 @@
     <section class="section content-section examples-section" id="examples">
       <div class="container project-column">
         <h2 class="title is-3 has-text-centered">Representative Image-Editing Pairs</h2>
-        <p class="section-deck gallery-intro has-text-centered">Each row shows a benchmark input and its reference target from the released dataset. Hover over either image, or move keyboard focus into the row, to view the task definition.</p>
+        <p class="section-deck gallery-intro has-text-centered">Each row shows a benchmark input and its reference target from the released dataset. Hover over an image, or focus it with the keyboard, to view its description.</p>
 
         <div class="benchmark-gallery research-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Representative MedGEN-Bench image-editing cases" tabindex="0">
-          <p class="visually-hidden">The three-page gallery rotates automatically. Use the previous and next buttons, page selectors, or left and right arrow keys to browse.</p>
+          <p class="visually-hidden">The seven-page gallery rotates automatically. Use the previous and next buttons, page selectors, or left and right arrow keys to browse.</p>
           <div class="gallery-frame">
             <button class="gallery-arrow gallery-prev" type="button" data-carousel-prev aria-label="Previous gallery page">‹</button>
             <div class="gallery-viewport">
-              <div class="gallery-slide is-active" data-carousel-slide data-carousel-label="Radiography and ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 1 of 3">
-                <div class="gallery-table" role="table" aria-label="Radiography and ultrasound examples">
+              <div class="gallery-slide is-active" data-carousel-slide data-carousel-label="Radiography and liver ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 1 of 7">
+                <div class="gallery-table" role="table" aria-label="Radiography and liver ultrasound examples">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Benchmark Input</div>
                     <div role="columnheader"><strong>Reference Target</strong></div>
@@ -178,7 +178,10 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/chest-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution chest radiograph reference target"><img src="static/images/samples/chest-target.jpg" alt="Reference chest radiograph target with opacity and atelectasis annotation." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/chest-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution chest radiograph reference target">
+                          <img src="static/images/samples/chest-target.jpg" alt="Reference chest radiograph target with opacity and atelectasis annotation." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Opacity and atelectasis annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Adds structured findings for the right-basilar opacity and left-basilar linear opacities.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Opacity and atelectasis annotation</figcaption>
                       </figure>
                     </div>
@@ -196,10 +199,22 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/liver-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution liver ultrasound reference target"><img src="static/images/samples/liver-target.jpg" alt="Reference liver ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/liver-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution liver ultrasound reference target">
+                          <img src="static/images/samples/liver-target.jpg" alt="Reference liver ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Structured liver mass annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the organ, lesion, diagnostic impression, and left-lobe location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Abdominal and obstetric ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 2 of 7" hidden>
+                <div class="gallery-table" role="table" aria-label="Abdominal and obstetric ultrasound examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
@@ -214,7 +229,10 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/appendix-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution appendix ultrasound reference target"><img src="static/images/samples/appendix-target.jpg" alt="Reference appendix ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/appendix-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution appendix ultrasound reference target">
+                          <img src="static/images/samples/appendix-target.jpg" alt="Reference appendix ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Chronic appendicitis annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the appendix, distension and edema, diagnosis, and right-lower-quadrant location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
@@ -232,10 +250,22 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/csep-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution uterine ultrasound reference target"><img src="static/images/samples/csep-target.jpg" alt="Reference uterine ultrasound target identifying a cesarean-scar ectopic pregnancy." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/csep-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution uterine ultrasound reference target">
+                          <img src="static/images/samples/csep-target.jpg" alt="Reference uterine ultrasound target identifying a cesarean-scar ectopic pregnancy." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Cesarean-scar ectopic pregnancy</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the uterus, gestational sac, CSEP diagnosis, and scar-site location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Hepatic and renal imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 3 of 7" hidden>
+                <div class="gallery-table" role="table" aria-label="Hepatic and renal imaging examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
@@ -250,19 +280,13 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/hepatic-angioma-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution hepatic ultrasound reference target"><img src="static/images/samples/hepatic-angioma-target.jpg" alt="Reference liver ultrasound target with lesion, diagnosis, and location annotation." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/hepatic-angioma-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution hepatic ultrasound reference target">
+                          <img src="static/images/samples/hepatic-angioma-target.jpg" alt="Reference liver ultrasound target with lesion, diagnosis, and location annotation." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Hepatic angioma annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the liver lesion, hepatic angioma diagnosis, and seventh-segment location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="gallery-slide" data-carousel-slide data-carousel-label="Pathology and acute imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 2 of 3" hidden>
-                <div class="gallery-table" role="table" aria-label="Pathology and acute imaging examples">
-                  <div class="gallery-grid gallery-head" role="row">
-                    <div role="columnheader">Benchmark Input</div>
-                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
@@ -277,10 +301,22 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pathology-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney pathology reference target"><img src="static/images/samples/pathology-target.jpg" alt="Reference kidney pathology target identifying neoplastic cells and clear-cell renal cell carcinoma." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/pathology-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney pathology reference target">
+                          <img src="static/images/samples/pathology-target.jpg" alt="Reference kidney pathology target identifying neoplastic cells and clear-cell renal cell carcinoma." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Clear-cell renal carcinoma annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records neoplastic cells, the diagnosis, and their renal-cortex location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Cell type · Diagnosis · Renal cortex</figcaption>
                       </figure>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Soft-tissue and abdominal ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 4 of 7" hidden>
+                <div class="gallery-table" role="table" aria-label="Soft-tissue and abdominal ultrasound examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
@@ -295,7 +331,10 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/umbilicus-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical ultrasound reference target"><img src="static/images/samples/umbilicus-target.jpg" alt="Reference umbilical ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/umbilicus-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical ultrasound reference target">
+                          <img src="static/images/samples/umbilicus-target.jpg" alt="Reference umbilical ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Umbilical lesion annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the organ, mixed solid-cystic lesion, diagnosis, and umbilical location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
@@ -313,10 +352,22 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/abdomen-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution abdominal ultrasound reference target"><img src="static/images/samples/abdomen-target.jpg" alt="Reference abdominal ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/abdomen-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution abdominal ultrasound reference target">
+                          <img src="static/images/samples/abdomen-target.jpg" alt="Reference abdominal ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Abdominal follow-up annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the abdominal finding, follow-up impression, and middle-right epigastric location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Pulmonary and cardiac imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 5 of 7" hidden>
+                <div class="gallery-table" role="table" aria-label="Pulmonary and cardiac imaging examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
@@ -331,19 +382,13 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pulmonary-edema-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pulmonary edema reference target"><img src="static/images/samples/pulmonary-edema-target.jpg" alt="Reference chest radiograph target describing pulmonary edema and its distribution." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/pulmonary-edema-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pulmonary edema reference target">
+                          <img src="static/images/samples/pulmonary-edema-target.jpg" alt="Reference chest radiograph target describing pulmonary edema and its distribution." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Pulmonary edema annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the lung opacities, pulmonary edema diagnosis, and bilateral distribution.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="gallery-slide" data-carousel-slide data-carousel-label="Cardiac, breast, and thoracic imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 3 of 3" hidden>
-                <div class="gallery-table" role="table" aria-label="Cardiac, breast, and thoracic imaging examples">
-                  <div class="gallery-grid gallery-head" role="row">
-                    <div role="columnheader">Benchmark Input</div>
-                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
@@ -358,10 +403,22 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/cardiac-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac ultrasound reference target"><img src="static/images/samples/cardiac-target.jpg" alt="Reference cardiac ultrasound target identifying a left-ventricular thrombus and its location." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/cardiac-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac ultrasound reference target">
+                          <img src="static/images/samples/cardiac-target.jpg" alt="Reference cardiac ultrasound target identifying a left-ventricular thrombus and its location." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Left-ventricular thrombus annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the thrombus, dilated cardiomyopathy diagnosis, and intra-cardiac location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Breast and pleural imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 6 of 7" hidden>
+                <div class="gallery-table" role="table" aria-label="Breast and pleural imaging examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
@@ -376,7 +433,10 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/breast-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast imaging reference target"><img src="static/images/samples/breast-target.jpg" alt="Reference breast imaging target identifying a calcified soft-tissue mass in the left breast." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/breast-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast imaging reference target">
+                          <img src="static/images/samples/breast-target.jpg" alt="Reference breast imaging target identifying a calcified soft-tissue mass in the left breast." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Calcified breast lesion annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the mass, suspected malignancy, and left-breast location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Lesion · Diagnostic impression · Location</figcaption>
                       </figure>
                     </div>
@@ -394,10 +454,22 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pleural-effusion-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pleural effusion reference target"><img src="static/images/samples/pleural-effusion-target.jpg" alt="Reference chest radiograph target describing a right pleural effusion and associated findings." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/pleural-effusion-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pleural effusion reference target">
+                          <img src="static/images/samples/pleural-effusion-target.jpg" alt="Reference chest radiograph target describing a right pleural effusion and associated findings." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Pleural effusion annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the right pleural effusion, associated atelectasis, and bilateral findings.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnostic impression · Location</figcaption>
                       </figure>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Pneumothorax follow-up" role="group" aria-roledescription="slide" aria-label="Gallery page 7 of 7" hidden>
+                <div class="gallery-table" role="table" aria-label="Pneumothorax follow-up example">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
@@ -412,7 +484,10 @@
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pneumothorax-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pneumothorax follow-up reference target"><img src="static/images/samples/pneumothorax-target.jpg" alt="Reference chest radiograph target describing the resolved pneumothorax and current lung findings." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/pneumothorax-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pneumothorax follow-up reference target">
+                          <img src="static/images/samples/pneumothorax-target.jpg" alt="Reference chest radiograph target describing the resolved pneumothorax and current lung findings." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Reference target</span><strong>Pneumothorax follow-up annotation</strong><span class="case-format">Expected edited image</span><span class="case-instruction">Records the resolved right apical pneumothorax and current bilateral lung findings.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
@@ -429,9 +504,13 @@
                 <button class="gallery-dot is-active" type="button" data-carousel-dot="0" aria-label="Show gallery page 1" aria-pressed="true" aria-current="true"></button>
                 <button class="gallery-dot" type="button" data-carousel-dot="1" aria-label="Show gallery page 2" aria-pressed="false"></button>
                 <button class="gallery-dot" type="button" data-carousel-dot="2" aria-label="Show gallery page 3" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="3" aria-label="Show gallery page 4" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="4" aria-label="Show gallery page 5" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="5" aria-label="Show gallery page 6" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="6" aria-label="Show gallery page 7" aria-pressed="false"></button>
               </div>
             </div>
-            <p class="gallery-status visually-hidden" data-carousel-status aria-live="polite">1 / 3 · Radiography and ultrasound</p>
+            <p class="gallery-status visually-hidden" data-carousel-status aria-live="polite">1 / 7 · Radiography and liver ultrasound</p>
           </div>
         </div>
       </div>

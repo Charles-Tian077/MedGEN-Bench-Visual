@@ -545,8 +545,8 @@ a:focus-visible {
   margin-top: 0.6rem;
 }
 
-.gallery-row:has(.gallery-media:hover) .case-overlay,
-.gallery-row:focus-within .case-overlay {
+.gallery-media:hover > .case-overlay,
+.gallery-media:focus-visible > .case-overlay {
   opacity: 1;
   transform: translateY(0);
 }
