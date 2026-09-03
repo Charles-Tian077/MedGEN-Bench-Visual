@@ -12,7 +12,23 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="MedGEN-Bench">
   <meta name="twitter:description" content="A contextually entangled benchmark for open-ended multimodal medical generation.">
-  <title>MedGEN-Bench | Open-Ended Multimodal Medical Generation</title>
+  <meta name="citation_title" content="MedGEN-Bench: Contextually entangled benchmark for open-ended multimodal medical generation">
+  <meta name="citation_author" content="Junjie Yang">
+  <meta name="citation_author" content="Yuhao Yan">
+  <meta name="citation_author" content="Gang Wu">
+  <meta name="citation_author" content="Yuxuan Wang">
+  <meta name="citation_author" content="Ruoyu Liang">
+  <meta name="citation_author" content="Xinjie Jiang">
+  <meta name="citation_author" content="Xiang Wan">
+  <meta name="citation_author" content="Fenglei Fan">
+  <meta name="citation_author" content="Yongquan Zhang">
+  <meta name="citation_author" content="Feiwei Qin">
+  <meta name="citation_author" content="Changmiao Wang">
+  <meta name="citation_publication_date" content="2025/11/18">
+  <meta name="citation_arxiv_id" content="2511.13135">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2511.13135">
+  <link rel="canonical" href="https://charles-tian077.github.io/MedGEN-Bench-Visual/">
+  <title>MedGEN-Bench | Contextually Entangled Multimodal Medical Generation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,13 +40,14 @@
 </head>
 
 <body>
-  <main>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content">
     <section class="hero publication-header">
       <div class="hero-body">
         <div class="container is-max-desktop has-text-centered">
           <h1 class="title is-1 publication-title" aria-label="MedGEN-Bench: Contextually entangled benchmark for open-ended multimodal medical generation">
             <span class="title-main">MedGEN-Bench</span>
-            <span class="title-sub">Open-Ended Multimodal Medical Generation</span>
+            <span class="title-sub">Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation</span>
           </h1>
 
           <div class="is-size-5 publication-authors" role="group" aria-label="Authors">
@@ -57,7 +74,7 @@
             <span><sup>7</sup>City University of Hong Kong</span>
           </div>
 
-          <p class="publication-venue">arXiv:2511.13135v2 · 18 November 2025</p>
+          <p class="publication-venue">arXiv preprint, v2 · 18 November 2025</p>
 
           <nav class="publication-links" aria-label="Project resources">
             <a class="button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2511.13135" target="_blank" rel="noopener">
@@ -82,17 +99,17 @@
 
     <section class="section teaser-section">
       <div class="container is-max-desktop">
-        <h2 class="visually-hidden">MedGEN-Bench summary</h2>
         <figure class="teaser-figure">
           <img src="static/images/figures/benchmark-overview.png" alt="Representative MedGEN-Bench tasks including image enhancement, disease prediction, organ removal and reconstruction, artifact removal, anatomical annotation, style transfer, and dimensional conversion.">
           <figcaption>
-            6,422 expert-validated pairs spanning 11,744 images, 6 modalities, 16 tasks, and 28 subtasks.
+            <strong>Figure 1.</strong> Overview of the three output formats and representative benchmark tasks.
           </figcaption>
         </figure>
 
-        <div class="content project-summary has-text-justified">
+        <h2 class="title is-3 has-text-centered abstract-title">Abstract</h2>
+        <div class="content project-summary">
           <p>
-            MedGEN-Bench tests whether a system can follow <strong>image-specific clinical instructions</strong> and produce an open-ended text answer, an edited medical image, or both. The benchmark covers CT, MRI, ultrasound, radiography, pathology, and clinical photography; every retained pair is reviewed for anatomical accuracy, pathological plausibility, and clinical coherence.
+            MedGEN-Bench evaluates open-ended multimodal medical generation under instructions whose meaning depends on image content. The benchmark contains 6,422 expert-validated instruction-output pairs and 11,744 images spanning six modalities, 16 clinical tasks, and 28 subtasks. It covers visual question answering, image editing, and contextual multimodal generation. A four-stage pipeline combines dataset filtering, rule- and model-based image-pair synthesis, semantic instruction construction, and automated plus expert review. Evaluation integrates image fidelity, biomedical text similarity, and holistic cross-modal judgments. Experiments compare compositional, editing, unified, and vision-language systems, exposing trade-offs between unimodal quality and cross-modal consistency.
           </p>
         </div>
       </div>
@@ -101,45 +118,60 @@
     <section class="section content-section" id="benchmark">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Benchmark Overview</h2>
-        <p class="section-deck has-text-centered">Three output formats expose different failures in multimodal medical reasoning.</p>
+        <p class="section-deck has-text-centered">Input-output specifications for the three benchmark formats.</p>
 
-        <div class="task-grid">
-          <article>
-            <h3>Visual Question Answering</h3>
-            <p class="task-flow">image + query <span>→</span> text</p>
-            <p>Multiple choice · Blank filling · Question answering · Report generation</p>
-          </article>
-          <article>
-            <h3>Image Editing</h3>
-            <p class="task-flow">image + instruction <span>→</span> image</p>
-            <p>Resolution · Contrast · Noise reconstruction · Artifact removal · Annotation · Style transfer</p>
-          </article>
-          <article>
-            <h3>Contextual Multimodal Generation</h3>
-            <p class="task-flow">image + context <span>→</span> image + text</p>
-            <p>Disease prediction · Instruction editing · Organ removal/reconstruction · 3D↔2D conversion</p>
-          </article>
+        <div class="table-container" role="region" aria-label="Benchmark task formats" tabindex="0">
+          <table class="research-table task-table">
+            <thead>
+              <tr>
+                <th scope="col">Format</th>
+                <th scope="col">Input</th>
+                <th scope="col">Output</th>
+                <th scope="col">Task families</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Visual Question Answering</th>
+                <td>Image + query</td>
+                <td>Text</td>
+                <td>Multiple-choice questions · Fill-in-the-blank questions · Open-ended question answering · Report generation</td>
+              </tr>
+              <tr>
+                <th scope="row">Image Editing</th>
+                <td>Image + instruction</td>
+                <td>Image</td>
+                <td>Resolution enhancement · Contrast enhancement · Noise reconstruction · Artifact removal · Anatomical annotation · Style transfer</td>
+              </tr>
+              <tr>
+                <th scope="row">Contextual Multimodal Generation</th>
+                <td>Image + context</td>
+                <td>Image + text</td>
+                <td>Disease prediction · Instruction-guided editing · Organ removal and reconstruction · 3D-to-2D / 2D-to-3D conversion</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <p class="modality-line"><strong>Modalities:</strong> CT · MRI · Ultrasound · X-ray / Radiography · Pathology · Clinical Photography</p>
+        <p class="modality-line"><strong>Modalities:</strong> CT · MRI · Ultrasound · Radiography (X-ray) · Pathology · Clinical Photography</p>
 
         <figure class="paper-figure wide-figure">
           <img src="static/images/figures/dataset-statistics.png" alt="MedGEN-Bench distributions by task and modality, plus instruction and answer length distributions.">
-          <figcaption>Dataset composition reported in the paper. “Other” is a distribution bucket, not a seventh named modality.</figcaption>
+          <figcaption><strong>Figure 2.</strong> Task and modality distributions, together with instruction- and answer-length statistics (adapted from paper Figure 5). “Other” is a plotted category, not an additional named modality.</figcaption>
         </figure>
 
         <aside class="release-note">
-          <strong>Current public release.</strong> The Hugging Face manifest reports <strong>6,623 examples</strong>, <strong>13,021 image references</strong>, and <strong>11,105 unique referenced images</strong>, with zero missing references. These release figures are kept separate from the paper statistics above.
-          <a href="https://huggingface.co/datasets/Jack04810/MedGEN-Bench/blob/main/manifest.json" target="_blank" rel="noopener">Inspect the manifest.</a>
+          <strong>Public release.</strong> At revision <code>cee5e7a</code> (updated 31 August 2026), the Hugging Face manifest contains <strong>6,623 JSONL records</strong>, <strong>13,021 image references</strong>, and <strong>11,105 unique referenced images</strong>, with <strong>0 missing image references</strong>. These counts are reported separately from the 6,422 pairs and 11,744 images in the paper.
+          <a href="https://huggingface.co/datasets/Jack04810/MedGEN-Bench/blob/cee5e7ae410f7c5be12d5fa55464afb094c099b7/manifest.json" target="_blank" rel="noopener">Inspect this manifest revision.</a>
         </aside>
       </div>
     </section>
 
     <section class="section content-section examples-section" id="examples">
       <div class="container gallery-container">
-        <h2 class="title is-3 has-text-centered">Visualization Results: Anatomical Annotation</h2>
-        <p class="section-deck gallery-intro has-text-justified">
-          Each row shows a released MedGEN-Bench input paired with its expert-reviewed target; no model prediction is shown.
+        <h2 class="title is-3 has-text-centered">Representative Image-Editing Pairs</h2>
+        <p class="section-deck gallery-intro">
+          Each row presents a benchmark input and its reference target from the public release. No model outputs are displayed.
         </p>
 
         <div class="benchmark-gallery" data-gallery role="region" aria-roledescription="carousel" aria-label="Representative MedGEN-Bench image-editing cases" tabindex="0">
@@ -153,26 +185,26 @@
                 <div class="gallery-table" role="table" aria-label="Radiography and liver ultrasound examples">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Modality / Task</div>
-                    <div role="columnheader">Released Input</div>
-                    <div role="columnheader">Expert-Reviewed Target</div>
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader">Reference Target</div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="case-meta" role="rowheader">
                       <span class="case-kicker">Radiography</span>
-                      <strong>Chest Annotation</strong>
-                      <span class="case-format">Image Editing</span>
+                      <strong>Chest radiograph annotation</strong>
+                      <span class="case-format">Image Editing · Anatomical annotation</span>
                       <p>Annotate the right-basilar opacity and left-basilar linear opacities.</p>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <div class="gallery-media"><img src="static/images/samples/chest-input.jpg" alt="Input portable chest radiograph." loading="lazy"></div>
+                        <a class="gallery-media" href="static/images/samples/chest-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution chest radiograph input"><img src="static/images/samples/chest-input.jpg" alt="Input portable chest radiograph." loading="lazy"></a>
                         <figcaption><span class="cell-label">Input</span>Portable chest radiograph</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <div class="gallery-media"><img src="static/images/samples/chest-target.jpg" alt="Expert-reviewed chest radiograph target with opacity and atelectasis annotation." loading="lazy"></div>
+                        <a class="gallery-media" href="static/images/samples/chest-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution chest radiograph reference target"><img src="static/images/samples/chest-target.jpg" alt="Reference chest radiograph target with opacity and atelectasis annotation." loading="lazy"></a>
                         <figcaption><span class="cell-label">Target</span>Opacity and atelectasis annotation</figcaption>
                       </figure>
                     </div>
@@ -181,19 +213,19 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="case-meta" role="rowheader">
                       <span class="case-kicker">Ultrasound</span>
-                      <strong>Liver Mass Annotation</strong>
-                      <span class="case-format">Image Editing</span>
+                      <strong>Liver mass annotation</strong>
+                      <span class="case-format">Image Editing · Anatomical annotation</span>
                       <p>Annotate the solid liver mass and its anatomical location.</p>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <div class="gallery-media"><img src="static/images/samples/liver-input.jpg" alt="Input liver ultrasound showing a measured solid mass." loading="lazy"></div>
+                        <a class="gallery-media" href="static/images/samples/liver-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution liver ultrasound input"><img src="static/images/samples/liver-input.jpg" alt="Input liver ultrasound showing a measured solid mass." loading="lazy"></a>
                         <figcaption><span class="cell-label">Input</span>Measured 4 × 3 cm liver mass</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <div class="gallery-media"><img src="static/images/samples/liver-target.jpg" alt="Expert-reviewed liver ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></div>
+                        <a class="gallery-media" href="static/images/samples/liver-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution liver ultrasound reference target"><img src="static/images/samples/liver-target.jpg" alt="Reference liver ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
@@ -205,26 +237,26 @@
                 <div class="gallery-table" role="table" aria-label="Pathology and soft-tissue ultrasound examples">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Modality / Task</div>
-                    <div role="columnheader">Released Input</div>
-                    <div role="columnheader">Expert-Reviewed Target</div>
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader">Reference Target</div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="case-meta" role="rowheader">
                       <span class="case-kicker">Pathology</span>
-                      <strong>Renal Tumor Annotation</strong>
-                      <span class="case-format">Image Editing</span>
+                      <strong>Renal tumor annotation</strong>
+                      <span class="case-format">Image Editing · Anatomical annotation</span>
                       <p>Label neoplastic cells in the renal cortex.</p>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <div class="gallery-media"><img src="static/images/samples/pathology-input.jpg" alt="Input kidney histopathology image." loading="lazy"></div>
+                        <a class="gallery-media" href="static/images/samples/pathology-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney histopathology input"><img src="static/images/samples/pathology-input.jpg" alt="Input kidney histopathology image." loading="lazy"></a>
                         <figcaption><span class="cell-label">Input</span>Kidney histopathology</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <div class="gallery-media"><img src="static/images/samples/pathology-target.jpg" alt="Expert-reviewed kidney pathology target identifying neoplastic cells and clear-cell renal cell carcinoma." loading="lazy"></div>
+                        <a class="gallery-media" href="static/images/samples/pathology-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney pathology reference target"><img src="static/images/samples/pathology-target.jpg" alt="Reference kidney pathology target identifying neoplastic cells and clear-cell renal cell carcinoma." loading="lazy"></a>
                         <figcaption><span class="cell-label">Target</span>Cell type · Diagnosis · Renal cortex</figcaption>
                       </figure>
                     </div>
@@ -233,19 +265,19 @@
                   <div class="gallery-grid gallery-row" role="row">
                     <div class="case-meta" role="rowheader">
                       <span class="case-kicker">Ultrasound</span>
-                      <strong>Umbilical Lesion Annotation</strong>
-                      <span class="case-format">Image Editing</span>
+                      <strong>Umbilical lesion annotation</strong>
+                      <span class="case-format">Image Editing · Anatomical annotation</span>
                       <p>Annotate the indeterminate solid and cystic lesion.</p>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <div class="gallery-media"><img src="static/images/samples/umbilicus-input.jpg" alt="Input ultrasound of subcutaneous soft tissue at the umbilicus." loading="lazy"></div>
+                        <a class="gallery-media" href="static/images/samples/umbilicus-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical ultrasound input"><img src="static/images/samples/umbilicus-input.jpg" alt="Input ultrasound of subcutaneous soft tissue at the umbilicus." loading="lazy"></a>
                         <figcaption><span class="cell-label">Input</span>Umbilical soft-tissue ultrasound</figcaption>
                       </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <div class="gallery-media"><img src="static/images/samples/umbilicus-target.jpg" alt="Expert-reviewed umbilical ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></div>
+                        <a class="gallery-media" href="static/images/samples/umbilicus-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical ultrasound reference target"><img src="static/images/samples/umbilicus-target.jpg" alt="Reference umbilical ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></a>
                         <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
                       </figure>
                     </div>
@@ -271,48 +303,130 @@
     <section class="section content-section" id="construction">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Dataset Construction</h2>
-        <p class="section-deck has-text-centered">Automatic filtering and synthesis are followed by model-based checks and medical expert validation.</p>
+        <p class="section-deck has-text-centered">The four-stage pipeline combines preprocessing and pair synthesis with VLM review and medical-expert validation.</p>
 
         <figure class="paper-figure pipeline-figure">
           <img src="static/images/figures/construction-pipeline.png" alt="The four-stage MedGEN-Bench construction pipeline: preprocessing, image-pair synthesis, text-pair synthesis, and human refinement.">
+          <figcaption><strong>Figure 3.</strong> MedGEN-Bench construction pipeline (adapted from paper Figure 4): two-stage data filtering, image-pair synthesis, contextual instruction construction, and automated plus expert review.</figcaption>
         </figure>
 
-        <ol class="pipeline-steps">
-          <li><span>1</span><strong>Preprocessing</strong><small>Metadata filtering + GPT-4o semantic filtering</small></li>
-          <li><span>2</span><strong>Image-pair synthesis</strong><small>Rule/model transformations + human review</small></li>
-          <li><span>3</span><strong>Text-pair synthesis</strong><small>Qwen3-VL extraction + templates + contextual augmentation</small></li>
-          <li><span>4</span><strong>Human refinement</strong><small>Automated VLM checks + medical expert validation</small></li>
-        </ol>
+        <div class="content method-copy">
+          <p><strong>Pair synthesis.</strong> Metadata-based filtering selects task-relevant source images. Rule-based and model-based transformations form candidate image pairs; Qwen3-VL extracts structured semantics, task templates instantiate raw instruction-answer pairs, and GPT-4o performs contextual augmentation.</p>
+          <p><strong>Quality control.</strong> An automatic VLM review precedes medical expert assessment of question validity, answer accuracy, and multimodal relevance. Images produced by model-based transformations are retained only after validation for anatomical accuracy, pathological plausibility, and clinical coherence.</p>
+        </div>
       </div>
     </section>
 
     <section class="section content-section" id="evaluation">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Evaluation and Findings</h2>
-        <p class="section-deck has-text-centered">Local quality scores are paired with holistic judgments of clinical cross-modal alignment.</p>
+        <h2 class="title is-3 has-text-centered">Evaluation Protocol and Main Findings</h2>
+        <p class="section-deck has-text-centered">The protocol combines modality-specific metrics with VLM-based holistic evaluation.</p>
 
-        <div class="metric-grid">
-          <article><h3>Image level</h3><span>SSIM · PSNR · LPIPS</span></article>
-          <article><h3>Text level</h3><span>PubMedBERT-based BERTScore</span></article>
-          <article><h3>Holistic level</h3><span>Coherence · Alignment · Accuracy · Relevance · Consistency</span></article>
+        <div class="table-container" role="region" aria-label="Three-tier evaluation protocol" tabindex="0">
+          <table class="research-table evaluation-table">
+            <caption>Condensed evaluation protocol from Table 2.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Level</th>
+                <th scope="col">Metric or evaluator</th>
+                <th scope="col">Applied to</th>
+                <th scope="col">Procedure</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Image-level</th>
+                <td>SSIM · PSNR · LPIPS</td>
+                <td>Image generation and editing</td>
+                <td>Structural, pixel-wise, and perceptual comparison with the reference image.</td>
+              </tr>
+              <tr>
+                <th scope="row">Text-level</th>
+                <td>PubMedBERT BERTScore</td>
+                <td>Text generation and VQA</td>
+                <td>Contextual-embedding similarity between generated and reference text.</td>
+              </tr>
+              <tr>
+                <th scope="row">Holistic</th>
+                <td>VLM-as-a-Judge; Analyze-then-Judge; 1–10 scale</td>
+                <td>All three formats</td>
+                <td>With GT: output against reference. Without GT: input and output only. Dimensions: coherence, visual–text alignment, content accuracy, relevance, and consistency.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="protocol-note">For VQA and image editing, holistic evaluation uses content accuracy, relevance, and consistency. Cross-metric results are thresholded and reported as accuracy rates; full thresholds are given in the paper appendix.</p>
+
+        <div class="table-container results-table-wrap" role="region" aria-label="Selected multimodal generation results" tabindex="0">
+          <table class="research-table results-table">
+            <caption>Selected multimodal-generation results from paper Table 3. Values are accuracy rates (%) after thresholding; higher is better.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Model</th>
+                <th scope="col">System</th>
+                <th scope="col">Holistic<br>w. GT</th>
+                <th scope="col">Holistic<br>w.o. GT</th>
+                <th scope="col">SSIM</th>
+                <th scope="col">PSNR</th>
+                <th scope="col">LPIPS</th>
+                <th scope="col">BERTScore</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Gemini-2.5-flash-image</th>
+                <td>Unified</td>
+                <td>23.58</td>
+                <td>49.78</td>
+                <td>95.21</td>
+                <td>93.68</td>
+                <td>99.56</td>
+                <td>46.86</td>
+              </tr>
+              <tr>
+                <th scope="row">Ming-UniVision</th>
+                <td>Unified</td>
+                <td>8.54</td>
+                <td>11.48</td>
+                <td>96.19</td>
+                <td>81.41</td>
+                <td>96.55</td>
+                <td>24.93</td>
+              </tr>
+              <tr>
+                <th scope="row">Qwen3-VL + Seedream-4.0</th>
+                <td>Compositional</td>
+                <td>30.79</td>
+                <td>68.81</td>
+                <td>74.11</td>
+                <td>68.00</td>
+                <td>48.59</td>
+                <td>50.98</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <div class="finding-grid">
           <figure class="paper-figure ablation-figure">
             <img src="static/images/figures/contextual-augmentation.png" alt="Contextual augmentation ablation showing mean instruction-image similarity increasing from 0.273 to 0.372.">
-            <figcaption>Contextual augmentation ablation (Figure 6).</figcaption>
+            <figcaption><strong>Figure 4.</strong> Contextual-augmentation ablation on instruction–image similarity (adapted from paper Figure 6).</figcaption>
           </figure>
 
           <div class="content findings-copy">
+            <h3 class="results-heading">Main observations</h3>
             <ul>
               <li><strong>Evaluation coverage:</strong> 10 compositional frameworks, 2 image-editing models, 3 unified models, and 5 VLMs.</li>
-              <li>Compositional frameworks perform better overall on cross-modal consistency.</li>
-              <li>Strong local image metrics can mask weak multimodal reasoning.</li>
-              <li>Across 1,000 sampled pairs, contextual augmentation increases mean instruction–image similarity from <strong>0.273 to 0.372</strong> (<strong>+36.3%</strong>), with an average pass rate of <strong>86.9%</strong>.</li>
+              <li>For multimodal generation, Qwen3-VL + Seedream-4.0 obtains a with-GT holistic score of <strong>30.79</strong>, compared with <strong>23.58</strong> for Gemini-2.5-flash-image, the strongest evaluated unified model in this column.</li>
+              <li>Ming-UniVision records PSNR <strong>81.41</strong> and LPIPS <strong>96.55</strong>, but a with-GT holistic score of <strong>8.54</strong>; high image-level scores do not necessarily correspond to high cross-modal consistency.</li>
+              <li>In the 1,000-pair ablation, contextual augmentation increases mean instruction–image similarity from <strong>0.273 to 0.372</strong> (<strong>+36.3%</strong>); the reported average pass rate is <strong>86.9%</strong>.</li>
             </ul>
-            <p class="caveat">The 36.3% result measures semantic alignment, not diagnostic accuracy.</p>
+            <p class="caveat">The 36.3% figure is the relative change in instruction–image similarity and should not be interpreted as diagnostic accuracy.</p>
           </div>
         </div>
+
+        <aside class="scope-note"><strong>Scope.</strong> MedGEN-Bench is an evaluation resource for image-conditioned multimodal generation research. The reported experiments are benchmark evaluations; the paper does not report prospective clinical validation or patient-level outcomes.</aside>
       </div>
     </section>
 
@@ -323,6 +437,9 @@
   title   = {MedGEN-Bench: Contextually entangled benchmark for open-ended multimodal medical generation},
   author  = {Yang, Junjie and Yan, Yuhao and Wu, Gang and Wang, Yuxuan and Liang, Ruoyu and Jiang, Xinjie and Wan, Xiang and Fan, Fenglei and Zhang, Yongquan and Qin, Feiwei and Wang, Changmiao},
   journal = {arXiv preprint arXiv:2511.13135},
+  eprint  = {2511.13135},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
   year    = {2025}
 }</code></pre>
       </div>
@@ -333,7 +450,7 @@
     <div class="container is-max-desktop">
       <div class="content has-text-centered">
         <p>
-          Visual structure inspired by the <a href="https://tianweiy.github.io/dmd/" target="_blank" rel="noopener">DMD project page</a>, which credits the <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies academic page template</a>. Website code is shared under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener">CC BY-SA 4.0</a>. The current Hugging Face release does not declare a standalone dataset license; review its source terms before reuse.
+          Page layout adapted from the <a href="https://tianweiy.github.io/dmd/" target="_blank" rel="noopener">DMD</a> and <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project-page templates. Website source is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener">CC BY-SA 4.0</a>. The Hugging Face repository currently specifies no standalone dataset license; the website license does not apply to the dataset.
         </p>
       </div>
     </div>
