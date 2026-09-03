@@ -886,14 +886,6 @@ a:focus-visible {
   padding-left: 0.85rem;
 }
 
-.scope-note {
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.86rem;
-  margin-top: 1.8rem;
-  padding-top: 1rem;
-}
-
 .citation-section {
   background: #fff;
   border-top: 0;
