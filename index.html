@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
+  <script defer src="static/js/gallery.js"></script>
 </head>
 
 <body>
@@ -27,10 +28,9 @@
     <section class="hero publication-header">
       <div class="hero-body">
         <div class="container is-max-desktop has-text-centered">
-          <h1 class="title is-1 publication-title">
-            <span>MedGEN-Bench:</span><br>
-            Contextually entangled benchmark for<br class="desktop-break">
-            open-ended multimodal medical generation
+          <h1 class="title is-1 publication-title" aria-label="MedGEN-Bench: Contextually entangled benchmark for open-ended multimodal medical generation">
+            <span class="title-main">MedGEN-Bench</span>
+            <span class="title-sub">Open-Ended Multimodal Medical Generation</span>
           </h1>
 
           <div class="is-size-5 publication-authors" role="group" aria-label="Authors">
@@ -86,17 +86,9 @@
         <figure class="teaser-figure">
           <img src="static/images/figures/benchmark-overview.png" alt="Representative MedGEN-Bench tasks including image enhancement, disease prediction, organ removal and reconstruction, artifact removal, anatomical annotation, style transfer, and dimensional conversion.">
           <figcaption>
-            One benchmark for medical reasoning across text generation, image editing, and joint image–text generation.
+            6,422 expert-validated pairs spanning 11,744 images, 6 modalities, 16 tasks, and 28 subtasks.
           </figcaption>
         </figure>
-
-        <div class="headline-stats" role="list" aria-label="MedGEN-Bench paper statistics">
-          <div role="listitem"><strong>6,422</strong><span>expert-validated pairs</span></div>
-          <div role="listitem"><strong>11,744</strong><span>medical images</span></div>
-          <div role="listitem"><strong>6</strong><span>modalities</span></div>
-          <div role="listitem"><strong>16</strong><span>tasks</span></div>
-          <div role="listitem"><strong>28</strong><span>subtasks</span></div>
-        </div>
 
         <div class="content project-summary has-text-justified">
           <p>
@@ -113,19 +105,16 @@
 
         <div class="task-grid">
           <article>
-            <p class="task-index">01</p>
             <h3>Visual Question Answering</h3>
             <p class="task-flow">image + query <span>→</span> text</p>
             <p>Multiple choice · Blank filling · Question answering · Report generation</p>
           </article>
           <article>
-            <p class="task-index">02</p>
             <h3>Image Editing</h3>
             <p class="task-flow">image + instruction <span>→</span> image</p>
             <p>Resolution · Contrast · Noise reconstruction · Artifact removal · Annotation · Style transfer</p>
           </article>
           <article>
-            <p class="task-index">03</p>
             <h3>Contextual Multimodal Generation</h3>
             <p class="task-flow">image + context <span>→</span> image + text</p>
             <p>Disease prediction · Instruction editing · Organ removal/reconstruction · 3D↔2D conversion</p>
@@ -147,51 +136,135 @@
     </section>
 
     <section class="section content-section examples-section" id="examples">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Representative Image-Editing Pairs</h2>
-        <p class="section-deck has-text-centered">Published inputs are paired with expert-reviewed annotation targets and image-specific instructions.</p>
+      <div class="container gallery-container">
+        <h2 class="title is-3 has-text-centered">Visualization Results: Anatomical Annotation</h2>
+        <p class="section-deck gallery-intro has-text-justified">
+          Each row shows a released MedGEN-Bench input paired with its expert-reviewed target; no model prediction is shown.
+        </p>
 
-        <article class="comparison-set">
-          <h3 class="sample-instruction">Annotate the patchy right-basilar opacity and linear left-basilar opacities compatible with subsegmental atelectasis.</h3>
-          <div class="comparison-grid">
-            <figure>
-              <div class="image-stage xray"><img src="static/images/samples/chest-input.jpg" alt="Input portable chest radiograph."></div>
-              <figcaption><strong>Input</strong><br>Portable chest radiograph</figcaption>
-            </figure>
-            <figure>
-              <div class="image-stage xray"><img src="static/images/samples/chest-target.jpg" alt="Expert-reviewed chest radiograph target with clinical annotation."></div>
-              <figcaption><strong>Expert-reviewed target</strong><br>Anatomical annotation</figcaption>
-            </figure>
-          </div>
-        </article>
+        <div class="benchmark-gallery" data-gallery role="region" aria-roledescription="carousel" aria-label="Representative MedGEN-Bench image-editing cases" tabindex="0">
+          <p class="visually-hidden">Use the previous and next buttons, or the left and right arrow keys, to browse gallery pages.</p>
 
-        <article class="comparison-set">
-          <h3 class="sample-instruction">Annotate the 4 × 3 cm solid liver mass, including organ, lesion morphology, diagnostic finding, and location.</h3>
-          <div class="comparison-grid">
-            <figure>
-              <div class="image-stage"><img src="static/images/samples/liver-input.jpg" alt="Input liver ultrasound showing a measured solid mass."></div>
-              <figcaption><strong>Input</strong><br>Liver ultrasound</figcaption>
-            </figure>
-            <figure>
-              <div class="image-stage"><img src="static/images/samples/liver-target.jpg" alt="Expert-reviewed liver ultrasound target with organ, lesion, diagnosis, and location annotation."></div>
-              <figcaption><strong>Expert-reviewed target</strong><br>Clinical text overlay</figcaption>
-            </figure>
-          </div>
-        </article>
+          <div class="gallery-frame">
+            <button class="gallery-arrow gallery-prev" type="button" data-gallery-prev aria-label="Previous gallery page">‹</button>
 
-        <article class="comparison-set">
-          <h3 class="sample-instruction">Annotate neoplastic cells in the renal cortex, including the clear-cell renal cell carcinoma finding.</h3>
-          <div class="comparison-grid">
-            <figure>
-              <div class="image-stage"><img src="static/images/samples/pathology-input.jpg" alt="Input kidney pathology microscopy image."></div>
-              <figcaption><strong>Input</strong><br>Kidney pathology</figcaption>
-            </figure>
-            <figure>
-              <div class="image-stage"><img src="static/images/samples/pathology-target.jpg" alt="Expert-reviewed kidney pathology target with neoplastic cell and diagnosis annotation."></div>
-              <figcaption><strong>Expert-reviewed target</strong><br>Pathology annotation</figcaption>
-            </figure>
+            <div class="gallery-viewport">
+              <div class="gallery-slide is-active" data-gallery-slide data-gallery-label="Radiography and liver ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 1 of 2">
+                <div class="gallery-table" role="table" aria-label="Radiography and liver ultrasound examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Modality / Task</div>
+                    <div role="columnheader">Released Input</div>
+                    <div role="columnheader">Expert-Reviewed Target</div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="case-meta" role="rowheader">
+                      <span class="case-kicker">Radiography</span>
+                      <strong>Chest Annotation</strong>
+                      <span class="case-format">Image Editing</span>
+                      <p>Annotate the right-basilar opacity and left-basilar linear opacities.</p>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <div class="gallery-media"><img src="static/images/samples/chest-input.jpg" alt="Input portable chest radiograph." loading="lazy"></div>
+                        <figcaption><span class="cell-label">Input</span>Portable chest radiograph</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <div class="gallery-media"><img src="static/images/samples/chest-target.jpg" alt="Expert-reviewed chest radiograph target with opacity and atelectasis annotation." loading="lazy"></div>
+                        <figcaption><span class="cell-label">Target</span>Opacity and atelectasis annotation</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="case-meta" role="rowheader">
+                      <span class="case-kicker">Ultrasound</span>
+                      <strong>Liver Mass Annotation</strong>
+                      <span class="case-format">Image Editing</span>
+                      <p>Annotate the solid liver mass and its anatomical location.</p>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <div class="gallery-media"><img src="static/images/samples/liver-input.jpg" alt="Input liver ultrasound showing a measured solid mass." loading="lazy"></div>
+                        <figcaption><span class="cell-label">Input</span>Measured 4 × 3 cm liver mass</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <div class="gallery-media"><img src="static/images/samples/liver-target.jpg" alt="Expert-reviewed liver ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></div>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-gallery-slide data-gallery-label="Pathology and soft-tissue ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 2 of 2" hidden>
+                <div class="gallery-table" role="table" aria-label="Pathology and soft-tissue ultrasound examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Modality / Task</div>
+                    <div role="columnheader">Released Input</div>
+                    <div role="columnheader">Expert-Reviewed Target</div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="case-meta" role="rowheader">
+                      <span class="case-kicker">Pathology</span>
+                      <strong>Renal Tumor Annotation</strong>
+                      <span class="case-format">Image Editing</span>
+                      <p>Label neoplastic cells in the renal cortex.</p>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <div class="gallery-media"><img src="static/images/samples/pathology-input.jpg" alt="Input kidney histopathology image." loading="lazy"></div>
+                        <figcaption><span class="cell-label">Input</span>Kidney histopathology</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <div class="gallery-media"><img src="static/images/samples/pathology-target.jpg" alt="Expert-reviewed kidney pathology target identifying neoplastic cells and clear-cell renal cell carcinoma." loading="lazy"></div>
+                        <figcaption><span class="cell-label">Target</span>Cell type · Diagnosis · Renal cortex</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="case-meta" role="rowheader">
+                      <span class="case-kicker">Ultrasound</span>
+                      <strong>Umbilical Lesion Annotation</strong>
+                      <span class="case-format">Image Editing</span>
+                      <p>Annotate the indeterminate solid and cystic lesion.</p>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <div class="gallery-media"><img src="static/images/samples/umbilicus-input.jpg" alt="Input ultrasound of subcutaneous soft tissue at the umbilicus." loading="lazy"></div>
+                        <figcaption><span class="cell-label">Input</span>Umbilical soft-tissue ultrasound</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <div class="gallery-media"><img src="static/images/samples/umbilicus-target.jpg" alt="Expert-reviewed umbilical ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></div>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="gallery-arrow gallery-next" type="button" data-gallery-next aria-label="Next gallery page">›</button>
           </div>
-        </article>
+
+          <div class="gallery-navigation">
+            <div class="gallery-dots" role="group" aria-label="Choose gallery page">
+              <button class="gallery-dot is-active" type="button" data-gallery-dot="0" aria-label="Show gallery page 1" aria-pressed="true" aria-current="true"></button>
+              <button class="gallery-dot" type="button" data-gallery-dot="1" aria-label="Show gallery page 2" aria-pressed="false"></button>
+            </div>
+            <p class="gallery-status" data-gallery-status aria-live="polite">1 / 2 · Radiography and liver ultrasound</p>
+          </div>
+        </div>
       </div>
     </section>
 
