@@ -71,7 +71,8 @@ a:focus-visible {
 }
 
 .title-main,
-.title-sub {
+.title-sub,
+.title-tail {
   display: block;
   font-size: clamp(1.2rem, calc(4.23vw - 0.127rem), 2.53rem);
   white-space: nowrap;
@@ -82,10 +83,18 @@ a:focus-visible {
   letter-spacing: -0.05em;
 }
 
-.title-sub {
+.title-sub,
+.title-tail {
   color: var(--ink);
   letter-spacing: 0.02em;
+}
+
+.title-sub {
   margin-top: 0.18rem;
+}
+
+.title-tail {
+  margin-top: 0.08rem;
 }
 
 .publication-authors,
@@ -964,7 +973,8 @@ a:focus-visible {
   }
 
   .title-main,
-  .title-sub {
+  .title-sub,
+  .title-tail {
     font-size: clamp(0.8rem, calc(4.35vw - 0.065rem), 2.02rem);
     white-space: nowrap;
   }
@@ -973,7 +983,8 @@ a:focus-visible {
     letter-spacing: -0.064em;
   }
 
-  .title-sub {
+  .title-sub,
+  .title-tail {
     letter-spacing: 0.005em;
   }
 
