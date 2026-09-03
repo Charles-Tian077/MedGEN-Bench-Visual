@@ -178,13 +178,13 @@
         </p>
 
         <div class="benchmark-gallery" data-gallery role="region" aria-roledescription="carousel" aria-label="Representative MedGEN-Bench image-editing cases" tabindex="0">
-          <p class="visually-hidden">Use the previous and next buttons, or the left and right arrow keys, to browse gallery pages.</p>
+          <p class="visually-hidden">The three-page gallery rotates automatically. Use the previous and next buttons, the page selectors, or the left and right arrow keys to browse; use the pause control to stop automatic rotation.</p>
 
           <div class="gallery-frame">
             <button class="gallery-arrow gallery-prev" type="button" data-gallery-prev aria-label="Previous gallery page">‹</button>
 
             <div class="gallery-viewport">
-              <div class="gallery-slide is-active" data-gallery-slide data-gallery-label="Radiography and liver ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 1 of 2">
+              <div class="gallery-slide is-active" data-gallery-slide data-gallery-label="Radiography and liver ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 1 of 3">
                 <div class="gallery-table" role="table" aria-label="Radiography and liver ultrasound examples">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Modality / Task</div>
@@ -236,7 +236,7 @@
                 </div>
               </div>
 
-              <div class="gallery-slide" data-gallery-slide data-gallery-label="Pathology and soft-tissue ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 2 of 2" hidden>
+              <div class="gallery-slide" data-gallery-slide data-gallery-label="Pathology and soft-tissue ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 2 of 3" hidden>
                 <div class="gallery-table" role="table" aria-label="Pathology and soft-tissue ultrasound examples">
                   <div class="gallery-grid gallery-head" role="row">
                     <div role="columnheader">Modality / Task</div>
@@ -287,17 +287,76 @@
                   </div>
                 </div>
               </div>
+
+              <div class="gallery-slide" data-gallery-slide data-gallery-label="Cardiac and breast imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 3 of 3" hidden>
+                <div class="gallery-table" role="table" aria-label="Cardiac and breast imaging examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Modality / Task</div>
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader">Reference Target</div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="case-meta" role="rowheader">
+                      <span class="case-kicker">Echocardiography</span>
+                      <strong>Left-ventricular thrombus annotation</strong>
+                      <span class="case-format">Image Editing · Anatomical annotation</span>
+                      <p>Annotate the intra-left-ventricular thrombus and its anatomical location.</p>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/cardiac-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac ultrasound input"><img src="static/images/samples/cardiac-input.jpg" alt="Input cardiac ultrasound with ventricular measurements." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Input</span>Cardiac ultrasound</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/cardiac-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac ultrasound reference target"><img src="static/images/samples/cardiac-target.jpg" alt="Reference cardiac ultrasound target identifying a left-ventricular thrombus and its location." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="case-meta" role="rowheader">
+                      <span class="case-kicker">Breast imaging</span>
+                      <strong>Breast lesion annotation</strong>
+                      <span class="case-format">Image Editing · Anatomical annotation</span>
+                      <p>Annotate the left-breast mass and associated calcifications.</p>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/breast-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast imaging input"><img src="static/images/samples/breast-input.jpg" alt="Input panel containing mammography, ultrasound, and elastography views of a breast lesion." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Input</span>Mammography · Ultrasound · Elastography</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/breast-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast imaging reference target"><img src="static/images/samples/breast-target.jpg" alt="Reference breast imaging target identifying a calcified soft-tissue mass in the left breast." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Target</span>Lesion · Diagnostic impression · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <button class="gallery-arrow gallery-next" type="button" data-gallery-next aria-label="Next gallery page">›</button>
           </div>
 
           <div class="gallery-navigation">
-            <div class="gallery-dots" role="group" aria-label="Choose gallery page">
-              <button class="gallery-dot is-active" type="button" data-gallery-dot="0" aria-label="Show gallery page 1" aria-pressed="true" aria-current="true"></button>
-              <button class="gallery-dot" type="button" data-gallery-dot="1" aria-label="Show gallery page 2" aria-pressed="false"></button>
+            <div class="gallery-controls">
+              <div class="gallery-dots" role="group" aria-label="Choose gallery page">
+                <button class="gallery-dot is-active" type="button" data-gallery-dot="0" aria-label="Show gallery page 1" aria-pressed="true" aria-current="true"></button>
+                <button class="gallery-dot" type="button" data-gallery-dot="1" aria-label="Show gallery page 2" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-gallery-dot="2" aria-label="Show gallery page 3" aria-pressed="false"></button>
+              </div>
+              <button class="gallery-autoplay" type="button" data-gallery-autoplay aria-pressed="false" aria-label="Pause automatic gallery rotation">
+                <span class="gallery-autoplay-icon" data-gallery-autoplay-icon aria-hidden="true">Ⅱ</span>
+                <span data-gallery-autoplay-label>Pause</span>
+              </button>
             </div>
-            <p class="gallery-status" data-gallery-status aria-live="polite">1 / 2 · Radiography and liver ultrasound</p>
+            <p class="gallery-status" data-gallery-status aria-live="polite">1 / 3 · Radiography and liver ultrasound</p>
           </div>
         </div>
       </div>
