@@ -90,8 +90,13 @@
       });
 
       dots.forEach((dot, index) => {
-        const isActive = dotTarget(dot, index) === activeIndex;
+        const targetIndex = dotTarget(dot, index);
+        const distance = Math.abs(targetIndex - activeIndex);
+        const isActive = distance === 0;
+
         dot.classList.toggle("is-active", isActive);
+        dot.classList.toggle("is-distance-1", distance === 1);
+        dot.classList.toggle("is-distance-2", distance === 2);
         dot.setAttribute("aria-pressed", String(isActive));
 
         if (isActive) dot.setAttribute("aria-current", "true");

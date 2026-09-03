@@ -73,20 +73,19 @@ a:focus-visible {
 .title-main,
 .title-sub {
   display: block;
+  font-size: clamp(1.2rem, 2.35vw, 1.75rem);
   white-space: nowrap;
 }
 
 .title-main {
   color: var(--ink);
-  font-size: clamp(2.7rem, 5.2vw, 4.25rem);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .title-sub {
   color: var(--ink);
-  font-size: clamp(1.05rem, 2.05vw, 1.65rem);
-  letter-spacing: -0.025em;
-  margin-top: 0.28rem;
+  letter-spacing: -0.03em;
+  margin-top: 0.18rem;
 }
 
 .publication-authors,
@@ -396,6 +395,82 @@ a:focus-visible {
   text-align: right;
 }
 
+.full-results-table {
+  font-size: 0.76rem;
+  min-width: 1240px;
+  table-layout: auto;
+}
+
+.full-results-table th,
+.full-results-table td {
+  padding: 0.48rem 0.52rem;
+}
+
+.full-results-table .metric-band,
+.pairing-table .metric-band {
+  text-align: center;
+}
+
+.full-results-table .task-group {
+  color: var(--accent);
+  font-family: "Google Sans", "Noto Sans", sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 3.5rem;
+}
+
+.full-results-table .system-name {
+  min-width: 250px;
+  white-space: nowrap;
+}
+
+.full-results-table td,
+.full-results-table thead tr:nth-child(2) th,
+.pairing-table td,
+.pairing-table thead tr:nth-child(2) th {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.full-results-table .group-start > * {
+  border-top: 1.5px solid #222;
+}
+
+.second-best {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.pairing-table-wrap {
+  margin-bottom: 0;
+  margin-top: 2.35rem;
+}
+
+.pairing-table {
+  font-size: 0.82rem;
+  min-width: 900px;
+  table-layout: auto;
+}
+
+.pairing-table thead th:not(:first-child) {
+  text-align: center;
+}
+
+.pairing-table .primary-endpoint > * {
+  font-weight: 700;
+}
+
+.table-note {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0.55rem 0 2.2rem;
+  text-align: left;
+}
+
 .modality-line {
   color: var(--muted);
   font-size: 0.98rem;
@@ -454,8 +529,24 @@ a:focus-visible {
   position: relative;
 }
 
-.gallery-slide[hidden] {
-  display: none;
+.gallery-slides,
+.gallery-viewport {
+  display: grid;
+}
+
+.gallery-slides > [data-carousel-slide],
+.gallery-viewport > [data-carousel-slide] {
+  align-self: center;
+  grid-area: 1 / 1;
+  min-width: 0;
+  width: 100%;
+}
+
+.gallery-slides > [data-carousel-slide][hidden],
+.gallery-viewport > [data-carousel-slide][hidden] {
+  display: block;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .gallery-slide.is-active {
@@ -583,6 +674,7 @@ a:focus-visible {
 .gallery-media img {
   height: 100%;
   object-fit: contain;
+  object-position: center;
   width: 100%;
 }
 
@@ -645,9 +737,9 @@ a:focus-visible {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0;
   justify-content: center;
-  margin-top: 0.8rem;
+  margin-top: 0.45rem;
 }
 
 .gallery-controls {
@@ -659,7 +751,7 @@ a:focus-visible {
 .gallery-dots {
   align-items: center;
   display: flex;
-  gap: 0.55rem;
+  gap: 0;
 }
 
 .gallery-dot {
@@ -668,25 +760,39 @@ a:focus-visible {
   border: 0;
   cursor: pointer;
   display: inline-flex;
-  height: 2.75rem;
+  flex: 0 0 1.05rem;
+  height: 1.25rem;
   justify-content: center;
   padding: 0;
-  width: 2.75rem;
+  width: 1.05rem;
 }
 
 .gallery-dot::before {
   background: #bcbcbc;
   border-radius: 50%;
   content: "";
-  height: 0.72rem;
-  transition: background-color 150ms ease, transform 150ms ease;
-  width: 0.72rem;
+  height: 0.66rem;
+  opacity: 0.45;
+  transform: scale(0.4);
+  transition: background-color 150ms ease, box-shadow 150ms ease, opacity 150ms ease, transform 150ms ease;
+  width: 0.66rem;
+}
+
+.gallery-dot.is-distance-2::before {
+  opacity: 0.65;
+  transform: scale(0.6);
+}
+
+.gallery-dot.is-distance-1::before {
+  opacity: 0.82;
+  transform: scale(0.8);
 }
 
 .gallery-dot.is-active::before {
   background: var(--accent);
-  box-shadow: 0 0 0 3px rgba(163, 31, 52, 0.1);
-  transform: scale(1.42);
+  box-shadow: 0 0 0 2px rgba(163, 31, 52, 0.12);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .gallery-dot:focus-visible {
@@ -863,13 +969,13 @@ a:focus-visible {
     max-width: calc(100vw - 1.5rem);
   }
 
-  .title-main {
-    font-size: clamp(2rem, 10.8vw, 3rem);
-  }
-
+  .title-main,
   .title-sub {
     font-size: clamp(0.9rem, 4.2vw, 1.2rem);
     letter-spacing: -0.035em;
+  }
+
+  .title-sub {
     white-space: normal;
   }
 

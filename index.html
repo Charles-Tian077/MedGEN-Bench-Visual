@@ -28,7 +28,7 @@
   <meta name="citation_arxiv_id" content="2511.13135">
   <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2511.13135">
   <link rel="canonical" href="https://charles-tian077.github.io/MedGEN-Bench-Visual/">
-  <title>MedGEN-Bench | Contextually Entangled Multimodal Medical Generation</title>
+  <title>MedGEN-Bench</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,19 +107,19 @@
             <div class="gallery-slides">
               <div class="gallery-slide is-active" data-carousel-slide data-carousel-label="Figure 1 · Representative tasks" role="group" aria-roledescription="slide" aria-label="Overview figure 1 of 3">
                 <figure class="overview-figure">
-                  <img src="static/images/figures/benchmark-overview.png" alt="Representative MedGEN-Bench task cards arranged around an anatomical figure, spanning restoration, organ manipulation, cross-dimensional reconstruction, disease prediction, anatomical annotation, instruction-guided editing, and style transfer.">
+                  <img src="static/images/figures/benchmark-overview.png" width="1666" height="859" alt="Representative MedGEN-Bench task cards arranged around an anatomical figure, spanning restoration, organ manipulation, cross-dimensional reconstruction, disease prediction, anatomical annotation, instruction-guided editing, and style transfer.">
                   <figcaption><strong>Figure 1.</strong> MedGEN-Bench organizes image-grounded clinical tasks around six imaging modalities, pairing each input with an open-ended instruction and a reference output.</figcaption>
                 </figure>
               </div>
               <div class="gallery-slide" data-carousel-slide data-carousel-label="Figure 2 · Benchmark motivation" role="group" aria-roledescription="slide" aria-label="Overview figure 2 of 3" hidden>
                 <figure class="overview-figure">
-                  <img src="static/images/paper/overview-fig1.png" alt="Three recurring limitations of medical visual benchmarks: query-image misalignment, closed-ended formats, and text-centric output paradigms.">
+                  <img src="static/images/paper/overview-fig1.png" width="1440" height="520" alt="Three recurring limitations of medical visual benchmarks: query-image misalignment, closed-ended formats, and text-centric output paradigms.">
                   <figcaption><strong>Figure 2.</strong> Three recurring limitations of existing medical visual benchmarks motivate image-grounded, open-ended multimodal evaluation.</figcaption>
                 </figure>
               </div>
               <div class="gallery-slide" data-carousel-slide data-carousel-label="Figure 3 · Benchmark statistics" role="group" aria-roledescription="slide" aria-label="Overview figure 3 of 3" hidden>
                 <figure class="overview-figure">
-                  <img src="static/images/paper/overview-fig3.png" alt="MedGEN-Bench task and modality statistics with instruction and answer length distributions.">
+                  <img src="static/images/paper/overview-fig3.png" width="1438" height="702" alt="MedGEN-Bench task and modality statistics with instruction and answer length distributions.">
                   <figcaption><strong>Figure 3.</strong> Benchmark composition by task and modality, with instruction- and answer-length distributions.</figcaption>
                 </figure>
               </div>
@@ -519,109 +519,186 @@
     <section class="section content-section" id="evaluation">
       <div class="container project-column">
         <h2 class="title is-3 has-text-centered">Evaluation Protocol and Main Findings</h2>
-        <p class="section-deck has-text-centered">The protocol combines modality-specific metrics with VLM-based holistic evaluation.</p>
+        <p class="section-deck has-text-centered">Reference-based fidelity and similarity measures are reported alongside structured holistic assessment.</p>
 
-        <div class="table-container" role="region" aria-label="Three-tier evaluation protocol" tabindex="0">
-          <table class="research-table evaluation-table">
-            <caption>Condensed evaluation protocol from Table 2.</caption>
+        <div class="table-container results-table-wrap" role="region" aria-label="MedGEN-Bench main results from Table 3" tabindex="0">
+          <table class="research-table full-results-table" aria-describedby="table-3-note">
+            <caption class="visually-hidden">Table 3. Main results at MedGEN-Bench.</caption>
             <thead>
               <tr>
-                <th scope="col">Level</th>
-                <th scope="col">Metric or evaluator</th>
-                <th scope="col">Applied to</th>
-                <th scope="col">Procedure</th>
+                <th scope="col" rowspan="2">Task</th>
+                <th scope="col" rowspan="2">System</th>
+                <th class="metric-band" scope="colgroup" colspan="2">Holistic (1–5)</th>
+                <th class="metric-band" scope="colgroup" colspan="4">Image</th>
+                <th class="metric-band" scope="colgroup" colspan="3">Text</th>
+              </tr>
+              <tr>
+                <th scope="col">w. GT ↑</th>
+                <th scope="col">w.o. GT ↑</th>
+                <th scope="col">SSIM ↑</th>
+                <th scope="col">PSNR ↑</th>
+                <th scope="col">LPIPS ↓</th>
+                <th scope="col">MII ↑</th>
+                <th scope="col">BLEU ↑</th>
+                <th scope="col">PBScore ↑</th>
+                <th scope="col">EM ↑</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">Image-level</th>
-                <td>SSIM · PSNR · LPIPS</td>
-                <td>Image generation and editing</td>
-                <td>Structural, pixel-wise, and perceptual comparison with the reference image.</td>
+              <tr class="group-start">
+                <th class="task-group" scope="rowgroup" rowspan="8">Gen.</th>
+                <th class="system-name" scope="row">Gemini-2.5-flash-image [46]</th>
+                <td><strong>2.90</strong></td><td><strong>3.48</strong></td><td><strong>37.61</strong></td><td><strong>11.85</strong></td><td><strong>46.15</strong></td><td><strong>65.36</strong></td><td>0.61</td><td>88.95</td><td>&mdash;</td>
               </tr>
               <tr>
-                <th scope="row">Text-level</th>
-                <td>PubMedBERT BERTScore</td>
-                <td>Text generation and VQA</td>
-                <td>Contextual-embedding similarity between generated and reference text.</td>
+                <th class="system-name" scope="row">Show-o [47]</th>
+                <td>1.04</td><td>1.04</td><td>26.94</td><td><span class="second-best">9.72</span></td><td>69.99</td><td>33.92</td><td>0.53</td><td>86.07</td><td>&mdash;</td>
               </tr>
               <tr>
-                <th scope="row">Holistic</th>
-                <td>VLM-as-a-Judge; Analyze-then-Judge; 1–10 scale</td>
-                <td>All three formats</td>
-                <td>With GT: output against reference. Without GT: input and output only. Dimensions: coherence, visual–text alignment, content accuracy, relevance, and consistency.</td>
+                <th class="system-name" scope="row">Ming-UniVision [48]</th>
+                <td>2.02</td><td><span class="second-best">2.52</span></td><td><span class="second-best">33.82</span></td><td>8.93</td><td><span class="second-best">59.70</span></td><td><span class="second-best">54.64</span></td><td>0.57</td><td>87.54</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Qwen3-VL &amp; Seedream-4.0 [43, 49]</th>
+                <td><span class="second-best">2.18</span></td><td>2.23</td><td>17.61</td><td>8.83</td><td>64.28</td><td>47.47</td><td>0.58</td><td>88.11</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Qwen3-VL &amp; DALL-E 3 [43, 50]</th>
+                <td>1.59</td><td>1.63</td><td>13.34</td><td>9.20</td><td>66.12</td><td>44.45</td><td>0.59</td><td><span class="second-best">88.12</span></td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Qwen3-VL &amp; Imagen-4.0 [43, 51]</th>
+                <td>2.09</td><td>2.24</td><td>22.12</td><td>9.56</td><td>62.84</td><td>46.94</td><td>0.59</td><td>88.08</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">GPT-4o &amp; Seedream-4.0 [22, 49]</th>
+                <td>1.87</td><td>1.86</td><td>16.67</td><td>9.01</td><td>64.80</td><td>46.62</td><td><strong>0.64</strong></td><td>87.80</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Gemini-2.5-pro &amp; Seedream-4.0 [46, 49]</th>
+                <td>2.07</td><td>2.21</td><td>17.10</td><td>8.64</td><td>64.68</td><td>47.64</td><td><span class="second-best">0.61</span></td><td><strong>88.23</strong></td><td>&mdash;</td>
+              </tr>
+
+              <tr class="group-start">
+                <th class="task-group" scope="rowgroup" rowspan="10">Edit.</th>
+                <th class="system-name" scope="row">Gemini-2.5-pro [46]</th>
+                <td><span class="second-best">3.85</span></td><td><span class="second-best">4.19</span></td><td><span class="second-best">47.24</span></td><td><span class="second-best">15.74</span></td><td><span class="second-best">26.67</span></td><td><span class="second-best">82.55</span></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Show-o [47]</th>
+                <td>1.07</td><td>1.08</td><td>26.33</td><td>9.65</td><td>70.15</td><td>33.71</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Ming-UniVision [48]</th>
+                <td>3.08</td><td>3.36</td><td>46.06</td><td>14.97</td><td>34.71</td><td>77.03</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Seedream-4.0 [49]</th>
+                <td>1.62</td><td>1.50</td><td>18.16</td><td>7.98</td><td>64.29</td><td>46.37</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Qwen-image-edit [52]</th>
+                <td>3.77</td><td>4.11</td><td><strong>53.10</strong></td><td><strong>16.46</strong></td><td><strong>24.57</strong></td><td><strong>83.88</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Qwen3-VL &amp; GPT-image-1 [43, 53]</th>
+                <td><strong>4.02</strong></td><td><strong>4.37</strong></td><td>35.20</td><td>12.06</td><td>47.29</td><td>72.54</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Qwen3-VL &amp; DALL-E 3 [43, 50]</th>
+                <td>1.59</td><td>1.50</td><td>15.17</td><td>8.32</td><td>64.39</td><td>51.73</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Qwen3-VL &amp; Imagen-4.0 [43, 51]</th>
+                <td>2.87</td><td>2.94</td><td>24.78</td><td>8.98</td><td>58.06</td><td>59.51</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">GPT-4o &amp; Imagen-4.0 [22, 51]</th>
+                <td>2.60</td><td>2.64</td><td>24.14</td><td>8.82</td><td>59.31</td><td>56.88</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Gemini-2.5-pro &amp; Imagen-4.0 [46, 51]</th>
+                <td>2.65</td><td>2.80</td><td>24.86</td><td>8.84</td><td>58.64</td><td>58.78</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+
+              <tr class="group-start">
+                <th class="task-group" scope="rowgroup" rowspan="7">VQA</th>
+                <th class="system-name" scope="row">Qwen3-VL [43]</th>
+                <td><strong>4.04</strong></td><td><strong>4.55</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>2.21</td><td>87.67</td><td><strong>43.28</strong></td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Gemini-2.5-pro [46]</th>
+                <td><span class="second-best">4.00</span></td><td><span class="second-best">4.50</span></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>2.22</td><td><span class="second-best">87.77</span></td><td>18.10</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">GPT-4o [22]</th>
+                <td>3.70</td><td>4.14</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><span class="second-best">2.25</span></td><td>87.36</td><td>24.67</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">HuaTuoGPT-Vision [54]</th>
+                <td>3.61</td><td>4.03</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><strong>3.79</strong></td><td><strong>87.86</strong></td><td><span class="second-best">28.37</span></td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">RadFM [55]</th>
+                <td>1.89</td><td>1.95</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>1.13</td><td>86.12</td><td>13.33</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Show-o [47]</th>
+                <td>1.59</td><td>1.64</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>0.05</td><td>74.91</td><td>3.01</td>
+              </tr>
+              <tr>
+                <th class="system-name" scope="row">Ming-UniVision [48]</th>
+                <td>2.82</td><td>3.17</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>1.62</td><td>87.08</td><td>25.68</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="table-note" id="table-3-note"><strong>Table 3.</strong> Main results at MedGEN-Bench. To compare systems across complementary evidence views, we report reference-based fidelity and similarity measures together with structured holistic assessment. Gen., Edit., and VQA denote multimodal generation, image editing, and visual question answering. Holistic scores (1–5) are from the checklist-guided Qwen3-VL-8B-Instruct judge, while w. GT and w.o. GT denote reference-aware and reference-free views. MII, PBScore, and EM denote MedImageInsight similarity, PubMedBERTScore, and Exact Match, respectively. Metrics in [0,1] are reported as percentages, and lower LPIPS is better. EM applies only to VQA. Bold and underline mark the best and second-best results.</p>
 
-        <p class="protocol-note">For VQA and image editing, holistic evaluation uses content accuracy, relevance, and consistency. Cross-metric results are thresholded and reported as accuracy rates; full thresholds are given in the paper appendix.</p>
-
-        <div class="table-container results-table-wrap" role="region" aria-label="Selected multimodal generation results" tabindex="0">
-          <table class="research-table results-table">
-            <caption>Selected multimodal-generation results from paper Table 3. Values are accuracy rates (%) after thresholding; higher is better.</caption>
+        <div class="table-container pairing-table-wrap" role="region" aria-label="Behavioral pairing sensitivity from Table 4" tabindex="0">
+          <table class="research-table pairing-table" aria-describedby="table-4-note">
+            <caption class="visually-hidden">Table 4. Behavioral pairing sensitivity.</caption>
             <thead>
               <tr>
-                <th scope="col">Model</th>
-                <th scope="col">System</th>
-                <th scope="col">Holistic<br>w. GT</th>
-                <th scope="col">Holistic<br>w.o. GT</th>
-                <th scope="col">SSIM</th>
-                <th scope="col">PSNR</th>
-                <th scope="col">LPIPS</th>
-                <th scope="col">BERTScore</th>
+                <th scope="col" rowspan="2">Control</th>
+                <th class="metric-band" scope="colgroup" colspan="2">Cross-modal</th>
+                <th scope="col" rowspan="2">Anat.</th>
+                <th scope="col" rowspan="2">Findings</th>
+                <th scope="col" rowspan="2">Compliance</th>
+                <th scope="col" rowspan="2">Halluc. /<br>omission</th>
+                <th scope="col" rowspan="2"><em>p</em><sub>Holm</sub></th>
+              </tr>
+              <tr>
+                <th scope="col">Δ</th>
+                <th scope="col">95% CI</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">Gemini-2.5-flash-image</th>
-                <td>Unified</td>
-                <td>23.58</td>
-                <td>49.78</td>
-                <td>95.21</td>
-                <td>93.68</td>
-                <td>99.56</td>
-                <td>46.86</td>
-              </tr>
-              <tr>
-                <th scope="row">Ming-UniVision</th>
-                <td>Unified</td>
-                <td>8.54</td>
-                <td>11.48</td>
-                <td>96.19</td>
-                <td>81.41</td>
-                <td>96.55</td>
-                <td>24.93</td>
-              </tr>
-              <tr>
-                <th scope="row">Qwen3-VL + Seedream-4.0</th>
-                <td>Compositional</td>
-                <td>30.79</td>
-                <td>68.81</td>
-                <td>74.11</td>
-                <td>68.00</td>
-                <td>48.59</td>
-                <td>50.98</td>
-              </tr>
+              <tr><th scope="row">Blank image</th><td>2.16</td><td>1.88–2.44</td><td>1.34</td><td>2.10</td><td>2.10</td><td>2.14</td><td>2.23 × 10<sup>−24</sup></td></tr>
+              <tr><th scope="row">Unrelated image</th><td>1.07</td><td>0.81–1.33</td><td>0.32</td><td>0.78</td><td>0.43</td><td>0.39</td><td>1.43 × 10<sup>−11</sup></td></tr>
+              <tr><th scope="row">Same-modality image</th><td>0.57</td><td>0.37–0.80</td><td>0.16</td><td>0.42</td><td>0.20</td><td>0.16</td><td>1.49 × 10<sup>−6</sup></td></tr>
+              <tr><th scope="row">Image shuffle</th><td>0.64</td><td>0.43–0.86</td><td>0.28</td><td>0.65</td><td>0.28</td><td>0.30</td><td>4.60 × 10<sup>−7</sup></td></tr>
+              <tr class="primary-endpoint"><th scope="row">Instruction shuffle</th><td>0.52</td><td>0.31–0.72</td><td>0.12</td><td>0.49</td><td>0.25</td><td>0.23</td><td>3.44 × 10<sup>−6</sup></td></tr>
             </tbody>
           </table>
         </div>
+        <p class="table-note" id="table-4-note"><strong>Table 4.</strong> Behavioral pairing sensitivity on a random 1,000-case sample spanning all benchmark tasks and canonical modalities. The table reports reference-free decreases, Δ = S<sub>correct</sub> − S<sub>control</sub>, on five dimensions scored by LingShu-32B [57]. Larger values indicate stronger pairing dependence. The primary cross-modal-consistency endpoint includes a bootstrap 95% confidence interval and Holm-adjusted paired Wilcoxon <em>p</em>. <strong>Note:</strong> Scores use the 1–5 rubric. <em>p</em><sub>Holm</sub> refers to the cross-modal-consistency endpoint, and incomplete judge scores are excluded pairwise. The instruction-shuffle row is bolded for readability, while its non-cross-modal values are auxiliary exploratory diagnostics.</p>
 
         <div class="finding-grid">
           <figure class="paper-figure ablation-figure">
-            <img src="static/images/figures/contextual-augmentation.png" alt="Contextual augmentation ablation showing mean instruction-image similarity increasing from 0.273 to 0.372.">
-            <figcaption><strong>Figure 4.</strong> Contextual-augmentation ablation on instruction–image similarity (adapted from paper Figure 6).</figcaption>
+            <img src="static/images/figures/contextual-augmentation.png" alt="Semantic-alignment analysis showing similarity gains across six benchmarks and a shift in mean image-instruction similarity from 0.273 to 0.372.">
+            <figcaption><strong>Figure 4.</strong> Semantic-alignment analysis on 985 complete pairs. The upper panel reports gains against six VQA benchmarks, and the lower panel compares templates with augmented instructions. PR denotes pass rate; μ and σ denote mean and standard deviation.</figcaption>
           </figure>
 
           <div class="content findings-copy">
             <h3 class="results-heading">Main observations</h3>
             <ul>
-              <li><strong>Evaluation coverage:</strong> 10 compositional frameworks, 2 image-editing models, 3 unified models, and 5 VLMs.</li>
-              <li>For multimodal generation, Qwen3-VL + Seedream-4.0 obtains a with-GT holistic score of <strong>30.79</strong>, compared with <strong>23.58</strong> for Gemini-2.5-flash-image, the strongest evaluated unified model in this column.</li>
-              <li>Ming-UniVision records PSNR <strong>81.41</strong> and LPIPS <strong>96.55</strong>, but a with-GT holistic score of <strong>8.54</strong>; high image-level scores do not necessarily correspond to high cross-modal consistency.</li>
-              <li>In the 1,000-pair ablation, contextual augmentation increases mean instruction–image similarity from <strong>0.273 to 0.372</strong> (<strong>+36.3%</strong>); the reported average pass rate is <strong>86.9%</strong>.</li>
+              <li><strong>Image-output tasks remain far from saturated.</strong> Gemini-2.5-flash-image gives the strongest reference-based generation results (37.61% SSIM, 11.85 dB PSNR, 46.15% LPIPS, and 65.36% MII), while Qwen-image-edit reaches 53.10% SSIM, 16.46 dB PSNR, 24.57% LPIPS, and 83.88% MII for editing.</li>
+              <li><strong>Image-backend selection has the larger observed effect.</strong> With Seedream-4.0 fixed, SSIM varies from 16.67% to 17.61% and MII from 46.62% to 47.64%; with Qwen3-VL fixed, the corresponding ranges widen to 15.17%–35.20% and 51.73%–72.54%.</li>
+              <li><strong>Pairing sensitivity is statistically significant.</strong> Under instruction shuffle, the reference-free cross-modal-consistency decrease is 0.52 (95% CI, 0.31–0.72; Holm-adjusted paired Wilcoxon <em>p</em> = 3.44 × 10<sup>−6</sup>).</li>
+              <li><strong>Contextual augmentation improves semantic alignment.</strong> Mean image–instruction similarity increases from 0.273 to 0.372, and pass rates across the six benchmark comparisons range from 70.86% to 96.45%.</li>
             </ul>
-            <p class="caveat">The 36.3% figure is the relative change in instruction–image similarity and should not be interpreted as diagnostic accuracy.</p>
+            <p class="caveat">Together, the semantic-alignment gains and pairing-sensitivity results support image-specific task grounding without implying unrestricted clinical reasoning or clinical correctness.</p>
           </div>
         </div>
 
