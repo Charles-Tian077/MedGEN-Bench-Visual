@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MedGEN-Bench is an expert-validated benchmark for open-ended multimodal medical generation, spanning 6,422 pairs, 11,744 images, six medical imaging modalities, 16 tasks, and 28 subtasks.">
+  <meta name="description" content="MedGEN-Bench is an expert-reviewed benchmark for open-ended multimodal medical generation, with 6,422 image-text pairs across six modalities, 15 clinical tasks, and 26 named subtasks.">
   <meta name="keywords" content="MedGEN-Bench, multimodal medical generation, medical image editing, medical VQA, benchmark, vision-language models">
   <meta property="og:title" content="MedGEN-Bench">
   <meta property="og:description" content="A contextually entangled benchmark for open-ended multimodal medical generation.">
@@ -33,6 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700%7CNoto+Sans:400,500,600,700%7CCastoro:400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
@@ -44,7 +45,7 @@
   <main id="main-content">
     <section class="hero publication-header">
       <div class="hero-body">
-        <div class="container is-max-desktop has-text-centered">
+        <div class="container project-column has-text-centered">
           <h1 class="title is-1 publication-title" aria-label="MedGEN-Bench: Contextually entangled benchmark for open-ended multimodal medical generation">
             <span class="title-main">MedGEN-Bench</span>
             <span class="title-sub">Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation</span>
@@ -76,10 +77,7 @@
 
           <nav class="publication-links" aria-label="Project resources">
             <a class="button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2511.13135" target="_blank" rel="noopener">
-              <svg class="resource-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M7 3.5h7l4 4V20.5H7z"></path>
-                <path d="M14 3.5v4h4M9.5 10l5 7M14.5 10l-5 7"></path>
-              </svg>
+              <span class="resource-icon-academic" aria-hidden="true"><i class="ai ai-arxiv"></i></span>
               <span>arXiv</span>
             </a>
             <a class="button is-normal is-rounded is-dark" href="https://huggingface.co/datasets/Jack04810/MedGEN-Bench" target="_blank" rel="noopener">
@@ -100,108 +98,81 @@
       </div>
     </section>
 
-    <section class="section teaser-section">
-      <div class="container is-max-desktop">
-        <figure class="teaser-figure">
-          <img src="static/images/figures/benchmark-overview.png" alt="Representative MedGEN-Bench tasks including image enhancement, disease prediction, organ removal and reconstruction, artifact removal, anatomical annotation, style transfer, and dimensional conversion.">
-          <figcaption>
-            <strong>Figure 1.</strong> Overview of the three output formats and representative benchmark tasks.
-          </figcaption>
-        </figure>
-
-        <h2 class="title is-3 has-text-centered abstract-title">Abstract</h2>
-        <div class="content project-summary">
-          <p>
-            MedGEN-Bench evaluates open-ended multimodal medical generation under instructions whose meaning depends on image content. The benchmark contains 6,422 expert-validated instruction-output pairs and 11,744 images spanning six modalities, 16 clinical tasks, and 28 subtasks. It covers visual question answering, image editing, and contextual multimodal generation. A four-stage pipeline combines dataset filtering, rule- and model-based image-pair synthesis, semantic instruction construction, and automated plus expert review. Evaluation integrates image fidelity, biomedical text similarity, and holistic cross-modal judgments. Experiments compare compositional, editing, unified, and vision-language systems, exposing trade-offs between unimodal quality and cross-modal consistency.
-          </p>
+    <section class="section content-section overview-section" id="overview">
+      <div class="container project-column">
+        <h2 class="title is-3 has-text-centered">Overview</h2>
+        <div class="research-carousel overview-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="MedGEN-Bench overview figures" tabindex="0">
+          <div class="gallery-frame">
+            <button class="gallery-arrow gallery-prev" type="button" data-carousel-prev aria-label="Previous overview figure">‹</button>
+            <div class="gallery-slides">
+              <div class="gallery-slide is-active" data-carousel-slide data-carousel-label="Figure 1 · Representative tasks" role="group" aria-roledescription="slide" aria-label="Overview figure 1 of 3">
+                <figure class="overview-figure">
+                  <img src="static/images/figures/benchmark-overview.png" alt="Representative MedGEN-Bench task cards arranged around an anatomical figure, spanning restoration, organ manipulation, cross-dimensional reconstruction, disease prediction, anatomical annotation, instruction-guided editing, and style transfer.">
+                  <figcaption><strong>Figure 1.</strong> MedGEN-Bench organizes image-grounded clinical tasks around six imaging modalities, pairing each input with an open-ended instruction and a reference output.</figcaption>
+                </figure>
+              </div>
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Figure 2 · Benchmark motivation" role="group" aria-roledescription="slide" aria-label="Overview figure 2 of 3" hidden>
+                <figure class="overview-figure">
+                  <img src="static/images/paper/overview-fig1.png" alt="Three recurring limitations of medical visual benchmarks: query-image misalignment, closed-ended formats, and text-centric output paradigms.">
+                  <figcaption><strong>Figure 2.</strong> Three recurring limitations of existing medical visual benchmarks motivate image-grounded, open-ended multimodal evaluation.</figcaption>
+                </figure>
+              </div>
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Figure 3 · Benchmark statistics" role="group" aria-roledescription="slide" aria-label="Overview figure 3 of 3" hidden>
+                <figure class="overview-figure">
+                  <img src="static/images/paper/overview-fig3.png" alt="MedGEN-Bench task and modality statistics with instruction and answer length distributions.">
+                  <figcaption><strong>Figure 3.</strong> Benchmark composition by task and modality, with instruction- and answer-length distributions.</figcaption>
+                </figure>
+              </div>
+            </div>
+            <button class="gallery-arrow gallery-next" type="button" data-carousel-next aria-label="Next overview figure">›</button>
+          </div>
+          <div class="gallery-navigation">
+            <div class="gallery-controls">
+              <div class="gallery-dots" aria-label="Choose an overview figure">
+                <button class="gallery-dot is-active" type="button" data-carousel-dot="0" aria-label="Show overview figure 1" aria-pressed="true" aria-current="true"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="1" aria-label="Show overview figure 2" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="2" aria-label="Show overview figure 3" aria-pressed="false"></button>
+              </div>
+            </div>
+            <p class="gallery-status visually-hidden" data-carousel-status aria-live="polite">1 / 3 · Figure 1 · Representative tasks</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section content-section" id="benchmark">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Benchmark Overview</h2>
-        <p class="section-deck has-text-centered">Input-output specifications for the three benchmark formats.</p>
-
-        <div class="table-container" role="region" aria-label="Benchmark task formats" tabindex="0">
-          <table class="research-table task-table">
-            <thead>
-              <tr>
-                <th scope="col">Format</th>
-                <th scope="col">Input</th>
-                <th scope="col">Output</th>
-                <th scope="col">Task families</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Visual Question Answering</th>
-                <td>Image + query</td>
-                <td>Text</td>
-                <td>Multiple-choice questions · Fill-in-the-blank questions · Open-ended question answering · Report generation</td>
-              </tr>
-              <tr>
-                <th scope="row">Image Editing</th>
-                <td>Image + instruction</td>
-                <td>Image</td>
-                <td>Resolution enhancement · Contrast enhancement · Noise reconstruction · Artifact removal · Anatomical annotation · Style transfer</td>
-              </tr>
-              <tr>
-                <th scope="row">Contextual Multimodal Generation</th>
-                <td>Image + context</td>
-                <td>Image + text</td>
-                <td>Disease prediction · Instruction-guided editing · Organ removal and reconstruction · 3D-to-2D / 2D-to-3D conversion</td>
-              </tr>
-            </tbody>
-          </table>
+    <section class="section content-section abstract-section" id="abstract">
+      <div class="container project-column">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content project-summary">
+          <p>Medical vision-language models (VLMs) are increasingly expected to support clinical workflows through the generation of diagnostic text and relevant medical images. However, existing medical visual benchmarks exhibit three recurring limitations: query–image misalignment arising from queries that are weakly grounded in specific image instances, closed-ended formats that narrow the answer space and encourage shortcut-based prediction, and text-centric output paradigms that limit the evaluation of image-generation and image-editing capabilities. To address these limitations, we introduce MEDGEN-BENCH, a benchmark for open-ended multimodal medical generation. The evaluation snapshot reported in this manuscript comprises 6,422 expert-reviewed image–text pairs spanning 6 canonical imaging modalities, 15 clinical tasks, and 26 named subtasks. It includes 1,100 Visual Question Answering (VQA) pairs, 3,872 Image Editing pairs, and 1,450 Contextual Multimodal Generation pairs. MEDGEN-BENCH centers on contextual entanglement, defined as the dependence of an instruction’s intended output on the particular image instance rather than on task wording alone. The benchmark operationalizes this concept through image-grounded instructions and extends evaluation to open-ended multimodal outputs. Its tiered evaluation protocol combines reproducible, reference-based fidelity and similarity measures with a structured, checklist-guided assessment by a medical VLM judge. Neither global similarity scores nor VLM-based judgments are treated as evidence of clinical correctness. We evaluate 10 compositional frameworks, 2 dedicated image-editing models, 3 unified models, and 5 VLMs. The results show that image-output tasks remain unsaturated, with contextual multimodal generation appearing more challenging than image editing under the reported metrics. Contextual augmentation increases the mean image–instruction similarity from 0.273 to 0.372, while a 1,000-case medical-expert audit shows moderate agreement between the judge scores and clinician ratings. The source code and manifest for the reported evaluation snapshot will be made publicly available on GitHub.</p>
         </div>
-
-        <p class="modality-line"><strong>Modalities:</strong> CT · MRI · Ultrasound · Radiography (X-ray) · Pathology · Clinical Photography</p>
-
-        <figure class="paper-figure wide-figure">
-          <img src="static/images/figures/dataset-statistics.png" alt="MedGEN-Bench distributions by task and modality, plus instruction and answer length distributions.">
-          <figcaption><strong>Figure 2.</strong> Task and modality distributions, together with instruction- and answer-length statistics (adapted from paper Figure 5). “Other” is a plotted category, not an additional named modality.</figcaption>
-        </figure>
-
-        <aside class="release-note">
-          <strong>Public release.</strong> At revision <code>cee5e7a</code> (updated 31 August 2026), the Hugging Face manifest contains <strong>6,623 JSONL records</strong>, <strong>13,021 image references</strong>, and <strong>11,105 unique referenced images</strong>, with <strong>0 missing image references</strong>. These counts are reported separately from the 6,422 pairs and 11,744 images in the paper.
-          <a href="https://huggingface.co/datasets/Jack04810/MedGEN-Bench/blob/cee5e7ae410f7c5be12d5fa55464afb094c099b7/manifest.json" target="_blank" rel="noopener">Inspect this manifest revision.</a>
-        </aside>
       </div>
     </section>
 
     <section class="section content-section examples-section" id="examples">
-      <div class="container gallery-container">
+      <div class="container project-column">
         <h2 class="title is-3 has-text-centered">Representative Image-Editing Pairs</h2>
-        <p class="section-deck gallery-intro">
-          Each row presents a benchmark input and its reference target from the public release. No model outputs are displayed.
-        </p>
+        <p class="section-deck gallery-intro has-text-centered">Each row shows a benchmark input and its reference target from the released dataset. Hover over either image, or move keyboard focus into the row, to view the task definition.</p>
 
-        <div class="benchmark-gallery" data-gallery role="region" aria-roledescription="carousel" aria-label="Representative MedGEN-Bench image-editing cases" tabindex="0">
-          <p class="visually-hidden">The three-page gallery rotates automatically. Use the previous and next buttons, the page selectors, or the left and right arrow keys to browse; use the pause control to stop automatic rotation.</p>
-
+        <div class="benchmark-gallery research-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Representative MedGEN-Bench image-editing cases" tabindex="0">
+          <p class="visually-hidden">The three-page gallery rotates automatically. Use the previous and next buttons, page selectors, or left and right arrow keys to browse.</p>
           <div class="gallery-frame">
-            <button class="gallery-arrow gallery-prev" type="button" data-gallery-prev aria-label="Previous gallery page">‹</button>
-
+            <button class="gallery-arrow gallery-prev" type="button" data-carousel-prev aria-label="Previous gallery page">‹</button>
             <div class="gallery-viewport">
-              <div class="gallery-slide is-active" data-gallery-slide data-gallery-label="Radiography and liver ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 1 of 3">
-                <div class="gallery-table" role="table" aria-label="Radiography and liver ultrasound examples">
+              <div class="gallery-slide is-active" data-carousel-slide data-carousel-label="Radiography and ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 1 of 3">
+                <div class="gallery-table" role="table" aria-label="Radiography and ultrasound examples">
                   <div class="gallery-grid gallery-head" role="row">
-                    <div role="columnheader">Modality / Task</div>
                     <div role="columnheader">Benchmark Input</div>
-                    <div role="columnheader">Reference Target</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
-                    <div class="case-meta" role="rowheader">
-                      <span class="case-kicker">Radiography</span>
-                      <strong>Chest radiograph annotation</strong>
-                      <span class="case-format">Image Editing · Anatomical annotation</span>
-                      <p>Annotate the right-basilar opacity and left-basilar linear opacities.</p>
-                    </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/chest-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution chest radiograph input"><img src="static/images/samples/chest-input.jpg" alt="Input portable chest radiograph." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/chest-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution chest radiograph input">
+                          <img src="static/images/samples/chest-input.jpg" alt="Input portable chest radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Radiography</span><strong>Chest radiograph annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the right-basilar opacity and left-basilar linear opacities.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Input</span>Portable chest radiograph</figcaption>
                       </figure>
                     </div>
@@ -214,15 +185,12 @@
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
-                    <div class="case-meta" role="rowheader">
-                      <span class="case-kicker">Ultrasound</span>
-                      <strong>Liver mass annotation</strong>
-                      <span class="case-format">Image Editing · Anatomical annotation</span>
-                      <p>Annotate the solid liver mass and its anatomical location.</p>
-                    </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/liver-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution liver ultrasound input"><img src="static/images/samples/liver-input.jpg" alt="Input liver ultrasound showing a measured solid mass." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/liver-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution liver ultrasound input">
+                          <img src="static/images/samples/liver-input.jpg" alt="Input liver ultrasound showing a measured solid mass." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Liver mass annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the solid liver mass and its anatomical location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Input</span>Measured 4 × 3 cm liver mass</figcaption>
                       </figure>
                     </div>
@@ -233,27 +201,77 @@
                       </figure>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="gallery-slide" data-gallery-slide data-gallery-label="Pathology and soft-tissue ultrasound" role="group" aria-roledescription="slide" aria-label="Gallery page 2 of 3" hidden>
-                <div class="gallery-table" role="table" aria-label="Pathology and soft-tissue ultrasound examples">
-                  <div class="gallery-grid gallery-head" role="row">
-                    <div role="columnheader">Modality / Task</div>
-                    <div role="columnheader">Benchmark Input</div>
-                    <div role="columnheader">Reference Target</div>
-                  </div>
 
                   <div class="gallery-grid gallery-row" role="row">
-                    <div class="case-meta" role="rowheader">
-                      <span class="case-kicker">Pathology</span>
-                      <strong>Renal tumor annotation</strong>
-                      <span class="case-format">Image Editing · Anatomical annotation</span>
-                      <p>Label neoplastic cells in the renal cortex.</p>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/appendix-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution appendix ultrasound input">
+                          <img src="static/images/samples/appendix-input.jpg" alt="Input right-lower-quadrant ultrasound of the appendix." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Appendix annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the distended appendix and periappendiceal edema.</span></span>
+                        </a>
+                        <figcaption><span class="cell-label">Input</span>Appendix ultrasound</figcaption>
+                      </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/pathology-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney histopathology input"><img src="static/images/samples/pathology-input.jpg" alt="Input kidney histopathology image." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/appendix-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution appendix ultrasound reference target"><img src="static/images/samples/appendix-target.jpg" alt="Reference appendix ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/csep-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution uterine ultrasound input">
+                          <img src="static/images/samples/csep-input.jpg" alt="Input sagittal uterine ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Cesarean-scar pregnancy annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Identify the gestational sac at the previous cesarean-section scar.</span></span>
+                        </a>
+                        <figcaption><span class="cell-label">Input</span>Sagittal uterine ultrasound</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/csep-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution uterine ultrasound reference target"><img src="static/images/samples/csep-target.jpg" alt="Reference uterine ultrasound target identifying a cesarean-scar ectopic pregnancy." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/hepatic-angioma-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution hepatic ultrasound input">
+                          <img src="static/images/samples/hepatic-angioma-input.jpg" alt="Input paired liver ultrasound views." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Hepatic lesion annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the hypoechoic lesion in the seventh liver segment.</span></span>
+                        </a>
+                        <figcaption><span class="cell-label">Input</span>Paired liver ultrasound views</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/hepatic-angioma-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution hepatic ultrasound reference target"><img src="static/images/samples/hepatic-angioma-target.jpg" alt="Reference liver ultrasound target with lesion, diagnosis, and location annotation." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Pathology and acute imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 2 of 3" hidden>
+                <div class="gallery-table" role="table" aria-label="Pathology and acute imaging examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pathology-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution kidney histopathology input">
+                          <img src="static/images/samples/pathology-input.jpg" alt="Input kidney histopathology image." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Pathology</span><strong>Renal tumor annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Label neoplastic cells in the renal cortex.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Input</span>Kidney histopathology</figcaption>
                       </figure>
                     </div>
@@ -266,15 +284,12 @@
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
-                    <div class="case-meta" role="rowheader">
-                      <span class="case-kicker">Ultrasound</span>
-                      <strong>Umbilical lesion annotation</strong>
-                      <span class="case-format">Image Editing · Anatomical annotation</span>
-                      <p>Annotate the indeterminate solid and cystic lesion.</p>
-                    </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/umbilicus-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical ultrasound input"><img src="static/images/samples/umbilicus-input.jpg" alt="Input ultrasound of subcutaneous soft tissue at the umbilicus." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/umbilicus-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution umbilical ultrasound input">
+                          <img src="static/images/samples/umbilicus-input.jpg" alt="Input ultrasound of subcutaneous soft tissue at the umbilicus." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Umbilical lesion annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the indeterminate solid and cystic lesion.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Input</span>Umbilical soft-tissue ultrasound</figcaption>
                       </figure>
                     </div>
@@ -285,27 +300,59 @@
                       </figure>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="gallery-slide" data-gallery-slide data-gallery-label="Cardiac and breast imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 3 of 3" hidden>
-                <div class="gallery-table" role="table" aria-label="Cardiac and breast imaging examples">
-                  <div class="gallery-grid gallery-head" role="row">
-                    <div role="columnheader">Modality / Task</div>
-                    <div role="columnheader">Benchmark Input</div>
-                    <div role="columnheader">Reference Target</div>
-                  </div>
 
                   <div class="gallery-grid gallery-row" role="row">
-                    <div class="case-meta" role="rowheader">
-                      <span class="case-kicker">Echocardiography</span>
-                      <strong>Left-ventricular thrombus annotation</strong>
-                      <span class="case-format">Image Editing · Anatomical annotation</span>
-                      <p>Annotate the intra-left-ventricular thrombus and its anatomical location.</p>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/abdomen-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution abdominal ultrasound input">
+                          <img src="static/images/samples/abdomen-input.jpg" alt="Input middle-right epigastric ultrasound." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Ultrasound</span><strong>Abdominal follow-up annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the middle-right epigastric finding and follow-up impression.</span></span>
+                        </a>
+                        <figcaption><span class="cell-label">Input</span>Abdominal ultrasound</figcaption>
+                      </figure>
                     </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/cardiac-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac ultrasound input"><img src="static/images/samples/cardiac-input.jpg" alt="Input cardiac ultrasound with ventricular measurements." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/abdomen-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution abdominal ultrasound reference target"><img src="static/images/samples/abdomen-target.jpg" alt="Reference abdominal ultrasound target with organ, lesion, diagnosis, and location annotation." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pulmonary-edema-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pulmonary edema radiograph input">
+                          <img src="static/images/samples/pulmonary-edema-input.jpg" alt="Input semi-erect portable chest radiograph." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Radiography</span><strong>Pulmonary edema annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the bilateral pulmonary opacities and their distribution.</span></span>
+                        </a>
+                        <figcaption><span class="cell-label">Input</span>Semi-erect chest radiograph</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pulmonary-edema-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pulmonary edema reference target"><img src="static/images/samples/pulmonary-edema-target.jpg" alt="Reference chest radiograph target describing pulmonary edema and its distribution." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-carousel-slide data-carousel-label="Cardiac, breast, and thoracic imaging" role="group" aria-roledescription="slide" aria-label="Gallery page 3 of 3" hidden>
+                <div class="gallery-table" role="table" aria-label="Cardiac, breast, and thoracic imaging examples">
+                  <div class="gallery-grid gallery-head" role="row">
+                    <div role="columnheader">Benchmark Input</div>
+                    <div role="columnheader"><strong>Reference Target</strong></div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/cardiac-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution cardiac ultrasound input">
+                          <img src="static/images/samples/cardiac-input.jpg" alt="Input cardiac ultrasound with ventricular measurements." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Echocardiography</span><strong>Left-ventricular thrombus annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the intra-left-ventricular thrombus and its anatomical location.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Input</span>Cardiac ultrasound</figcaption>
                       </figure>
                     </div>
@@ -318,15 +365,12 @@
                   </div>
 
                   <div class="gallery-grid gallery-row" role="row">
-                    <div class="case-meta" role="rowheader">
-                      <span class="case-kicker">Breast imaging</span>
-                      <strong>Breast lesion annotation</strong>
-                      <span class="case-format">Image Editing · Anatomical annotation</span>
-                      <p>Annotate the left-breast mass and associated calcifications.</p>
-                    </div>
                     <div class="gallery-cell" role="cell">
                       <figure>
-                        <a class="gallery-media" href="static/images/samples/breast-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast imaging input"><img src="static/images/samples/breast-input.jpg" alt="Input panel containing mammography, ultrasound, and elastography views of a breast lesion." loading="lazy"></a>
+                        <a class="gallery-media" href="static/images/samples/breast-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution breast imaging input">
+                          <img src="static/images/samples/breast-input.jpg" alt="Input panel containing mammography, ultrasound, and elastography views of a breast lesion." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Breast imaging</span><strong>Breast lesion annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the left-breast mass and associated calcifications.</span></span>
+                        </a>
                         <figcaption><span class="cell-label">Input</span>Mammography · Ultrasound · Elastography</figcaption>
                       </figure>
                     </div>
@@ -337,50 +381,64 @@
                       </figure>
                     </div>
                   </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pleural-effusion-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pleural effusion radiograph input">
+                          <img src="static/images/samples/pleural-effusion-input.jpg" alt="Input portable chest radiograph with a right-sided pleural effusion." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Radiography</span><strong>Pleural effusion annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the right pleural effusion and associated atelectatic change.</span></span>
+                        </a>
+                        <figcaption><span class="cell-label">Input</span>Portable chest radiograph</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pleural-effusion-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pleural effusion reference target"><img src="static/images/samples/pleural-effusion-target.jpg" alt="Reference chest radiograph target describing a right pleural effusion and associated findings." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnostic impression · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="gallery-grid gallery-row" role="row">
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pneumothorax-input.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pneumothorax follow-up radiograph input">
+                          <img src="static/images/samples/pneumothorax-input.jpg" alt="Input portable chest radiograph for pneumothorax follow-up." loading="lazy">
+                          <span class="case-overlay"><span class="case-kicker">Radiography</span><strong>Pneumothorax follow-up annotation</strong><span class="case-format">Image Editing · Anatomical annotation</span><span class="case-instruction">Annotate the prior right apical pneumothorax and current pulmonary findings.</span></span>
+                        </a>
+                        <figcaption><span class="cell-label">Input</span>Portable chest radiograph</figcaption>
+                      </figure>
+                    </div>
+                    <div class="gallery-cell" role="cell">
+                      <figure>
+                        <a class="gallery-media" href="static/images/samples/pneumothorax-target.jpg" target="_blank" rel="noopener" aria-label="Open the full-resolution pneumothorax follow-up reference target"><img src="static/images/samples/pneumothorax-target.jpg" alt="Reference chest radiograph target describing the resolved pneumothorax and current lung findings." loading="lazy"></a>
+                        <figcaption><span class="cell-label">Target</span>Organ · Lesion · Diagnosis · Location</figcaption>
+                      </figure>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <button class="gallery-arrow gallery-next" type="button" data-gallery-next aria-label="Next gallery page">›</button>
+            <button class="gallery-arrow gallery-next" type="button" data-carousel-next aria-label="Next gallery page">›</button>
           </div>
 
           <div class="gallery-navigation">
             <div class="gallery-controls">
               <div class="gallery-dots" role="group" aria-label="Choose gallery page">
-                <button class="gallery-dot is-active" type="button" data-gallery-dot="0" aria-label="Show gallery page 1" aria-pressed="true" aria-current="true"></button>
-                <button class="gallery-dot" type="button" data-gallery-dot="1" aria-label="Show gallery page 2" aria-pressed="false"></button>
-                <button class="gallery-dot" type="button" data-gallery-dot="2" aria-label="Show gallery page 3" aria-pressed="false"></button>
+                <button class="gallery-dot is-active" type="button" data-carousel-dot="0" aria-label="Show gallery page 1" aria-pressed="true" aria-current="true"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="1" aria-label="Show gallery page 2" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-carousel-dot="2" aria-label="Show gallery page 3" aria-pressed="false"></button>
               </div>
-              <button class="gallery-autoplay" type="button" data-gallery-autoplay aria-pressed="false" aria-label="Pause automatic gallery rotation">
-                <span class="gallery-autoplay-icon" data-gallery-autoplay-icon aria-hidden="true">Ⅱ</span>
-                <span data-gallery-autoplay-label>Pause</span>
-              </button>
             </div>
-            <p class="gallery-status" data-gallery-status aria-live="polite">1 / 3 · Radiography and liver ultrasound</p>
+            <p class="gallery-status visually-hidden" data-carousel-status aria-live="polite">1 / 3 · Radiography and ultrasound</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section content-section" id="construction">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Dataset Construction</h2>
-        <p class="section-deck has-text-centered">The four-stage pipeline combines preprocessing and pair synthesis with VLM review and medical-expert validation.</p>
-
-        <figure class="paper-figure pipeline-figure">
-          <img src="static/images/figures/construction-pipeline.png" alt="The four-stage MedGEN-Bench construction pipeline: preprocessing, image-pair synthesis, text-pair synthesis, and human refinement.">
-          <figcaption><strong>Figure 3.</strong> MedGEN-Bench construction pipeline (adapted from paper Figure 4): two-stage data filtering, image-pair synthesis, contextual instruction construction, and automated plus expert review.</figcaption>
-        </figure>
-
-        <div class="content method-copy">
-          <p><strong>Pair synthesis.</strong> Metadata-based filtering selects task-relevant source images. Rule-based and model-based transformations form candidate image pairs; Qwen3-VL extracts structured semantics, task templates instantiate raw instruction-answer pairs, and GPT-4o performs contextual augmentation.</p>
-          <p><strong>Quality control.</strong> An automatic VLM review precedes medical expert assessment of question validity, answer accuracy, and multimodal relevance. Images produced by model-based transformations are retained only after validation for anatomical accuracy, pathological plausibility, and clinical coherence.</p>
-        </div>
-      </div>
-    </section>
-
     <section class="section content-section" id="evaluation">
-      <div class="container is-max-desktop">
+      <div class="container project-column">
         <h2 class="title is-3 has-text-centered">Evaluation Protocol and Main Findings</h2>
         <p class="section-deck has-text-centered">The protocol combines modality-specific metrics with VLM-based holistic evaluation.</p>
 
@@ -493,7 +551,7 @@
     </section>
 
     <section class="section citation-section" id="BibTeX">
-      <div class="container is-max-desktop content">
+      <div class="container project-column content">
         <h2 class="title is-3">BibTeX</h2>
         <pre><code>@article{yang2025medgenbench,
   title   = {MedGEN-Bench: Contextually entangled benchmark for open-ended multimodal medical generation},
@@ -509,7 +567,7 @@
   </main>
 
   <footer class="footer">
-    <div class="container is-max-desktop">
+    <div class="container project-column">
       <div class="content has-text-centered">
         <p>
           Page layout adapted from the <a href="https://tianweiy.github.io/dmd/" target="_blank" rel="noopener">DMD</a> and <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project-page templates. Website source is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener">CC BY-SA 4.0</a>. The Hugging Face repository currently specifies no standalone dataset license; the website license does not apply to the dataset.

@@ -163,8 +163,25 @@ a:focus-visible {
   stroke: none;
 }
 
+.resource-icon-academic {
+  align-items: center;
+  display: inline-flex;
+  font-size: 1.2rem;
+  height: 1.15rem;
+  justify-content: center;
+  margin-right: 0.48rem;
+  width: 1.15rem;
+}
+
 .section {
   padding: 2.6rem 1.5rem;
+}
+
+.project-column {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1080px !important;
+  width: 100%;
 }
 
 .teaser-section {
@@ -205,7 +222,7 @@ a:focus-visible {
 .project-summary {
   font-size: 1.05rem;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .project-summary p + p,
@@ -215,6 +232,57 @@ a:focus-visible {
 
 .content-section {
   border-top: 1px solid #eeeeee;
+}
+
+.overview-section {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.abstract-section {
+  background: #fafafa;
+}
+
+.carousel-container {
+  max-width: 1180px !important;
+  width: 100%;
+}
+
+.overview-container {
+  max-width: 1040px !important;
+}
+
+.research-carousel {
+  margin-top: 1.15rem;
+  outline: none;
+  position: relative;
+}
+
+.research-carousel:focus-visible {
+  outline: 3px solid rgba(163, 31, 52, 0.28);
+  outline-offset: 8px;
+}
+
+.overview-figure {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overview-figure img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-height: 650px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.overview-figure figcaption {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin: 0.72rem auto 0;
+  max-width: 100%;
 }
 
 .title.is-3 {
@@ -227,7 +295,7 @@ a:focus-visible {
   color: var(--muted);
   font-size: 1.02rem;
   margin: -0.35rem auto 1.8rem;
-  max-width: 760px;
+  max-width: 100%;
 }
 
 .table-container {
@@ -397,7 +465,7 @@ a:focus-visible {
 .gallery-grid {
   display: grid;
   column-gap: 1.55rem;
-  grid-template-columns: 190px repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .gallery-head {
@@ -422,14 +490,24 @@ a:focus-visible {
   border-top: 1px solid #e8e8e8;
 }
 
-.case-meta {
-  align-items: center;
-  align-self: stretch;
+.case-overlay {
+  align-items: flex-start;
+  background: rgba(10, 10, 10, 0.9);
+  border-top: 3px solid var(--accent);
+  bottom: 0.65rem;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 0.25rem;
-  text-align: center;
+  left: 0.65rem;
+  opacity: 0;
+  padding: 0.72rem 0.82rem 0.78rem;
+  pointer-events: none;
+  position: absolute;
+  right: 0.65rem;
+  text-align: left;
+  transform: translateY(0.5rem);
+  transition: opacity 170ms ease, transform 170ms ease;
+  z-index: 2;
 }
 
 .case-kicker {
@@ -442,25 +520,35 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
-.case-meta strong {
-  color: #111;
+.case-overlay .case-kicker {
+  color: #f3a5b2;
+}
+
+.case-overlay strong {
+  color: #fff;
   font-family: "Google Sans", "Noto Sans", sans-serif;
-  font-size: 1.04rem;
+  font-size: 0.98rem;
   line-height: 1.25;
 }
 
-.case-format {
-  color: var(--muted);
+.case-overlay .case-format {
+  color: rgba(255, 255, 255, 0.76);
   font-size: 0.76rem;
   font-style: italic;
   margin-top: 0.18rem;
 }
 
-.case-meta p {
-  color: #353535;
+.case-instruction {
+  color: #fff;
   font-size: 0.82rem;
   line-height: 1.45;
   margin-top: 0.6rem;
+}
+
+.gallery-row:has(.gallery-media:hover) .case-overlay,
+.gallery-row:focus-within .case-overlay {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gallery-cell,
@@ -481,6 +569,7 @@ a:focus-visible {
   aspect-ratio: 4 / 3;
   justify-content: center;
   overflow: hidden;
+  position: relative;
   transition: border-color 150ms ease;
 }
 
@@ -596,7 +685,8 @@ a:focus-visible {
 
 .gallery-dot.is-active::before {
   background: var(--accent);
-  transform: scale(1.18);
+  box-shadow: 0 0 0 3px rgba(163, 31, 52, 0.1);
+  transform: scale(1.42);
 }
 
 .gallery-dot:focus-visible {
@@ -816,15 +906,6 @@ a:focus-visible {
     padding: 1.45rem 0;
   }
 
-  .case-meta {
-    padding: 0 0.4rem;
-  }
-
-  .case-meta p {
-    margin-bottom: 0;
-    max-width: 420px;
-  }
-
   .cell-label {
     display: inline;
   }
@@ -846,6 +927,19 @@ a:focus-visible {
   .gallery-arrow:hover,
   .gallery-arrow:focus-visible {
     transform: translateY(-50%);
+  }
+
+  .research-carousel .gallery-arrow {
+    background: rgba(255, 255, 255, 0.94);
+    top: 50%;
+  }
+
+  .research-carousel .gallery-prev {
+    left: 0.25rem;
+  }
+
+  .research-carousel .gallery-next {
+    right: 0.25rem;
   }
 
   .finding-grid {
