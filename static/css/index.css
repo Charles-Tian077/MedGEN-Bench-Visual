@@ -79,7 +79,7 @@ a:focus-visible {
 
 .title-main {
   color: var(--ink);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
 }
 
 .title-sub {
@@ -970,7 +970,7 @@ a:focus-visible {
   }
 
   .title-main {
-    letter-spacing: -0.045em;
+    letter-spacing: -0.064em;
   }
 
   .title-sub {
