@@ -61,6 +61,7 @@ a:focus-visible {
 }
 
 .publication-title {
+  --hero-title-size: clamp(1.2rem, calc(4.23vw - 0.127rem), 2.53rem);
   color: var(--ink);
   font-family: "Google Sans", "Noto Sans", sans-serif;
   font-size: 1rem !important;
@@ -70,11 +71,9 @@ a:focus-visible {
   max-width: min(1100px, calc(100vw - 3rem));
 }
 
-.title-main,
-.title-sub,
-.title-tail {
+.publication-title > span {
   display: block;
-  font-size: clamp(1.2rem, calc(4.23vw - 0.127rem), 2.53rem);
+  font-size: var(--hero-title-size) !important;
   white-space: nowrap;
 }
 
@@ -969,14 +968,8 @@ a:focus-visible {
   }
 
   .publication-title {
+    --hero-title-size: clamp(0.8rem, calc(4.35vw - 0.065rem), 2.02rem);
     max-width: calc(100vw - 1.5rem);
-  }
-
-  .title-main,
-  .title-sub,
-  .title-tail {
-    font-size: clamp(0.8rem, calc(4.35vw - 0.065rem), 2.02rem);
-    white-space: nowrap;
   }
 
   .title-main {
