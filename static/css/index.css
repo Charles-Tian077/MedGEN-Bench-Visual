@@ -90,8 +90,7 @@ a:focus-visible {
 }
 
 .publication-authors,
-.publication-affiliations,
-.publication-venue {
+.publication-affiliations {
   font-family: "Google Sans", "Noto Sans", sans-serif;
 }
 
@@ -125,20 +124,13 @@ a:focus-visible {
   margin: 0 0.28rem;
 }
 
-.publication-venue {
-  color: var(--muted);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 0.8rem 0 0;
-}
-
 .publication-links {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 1.35rem;
 }
 
 .publication-links .button {
@@ -155,15 +147,20 @@ a:focus-visible {
   text-decoration: none;
 }
 
-.button-mark {
-  align-items: center;
-  display: inline-flex;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  justify-content: center;
-  margin-right: 0.42rem;
-  min-width: 1.55rem;
+.resource-icon {
+  fill: none;
+  height: 1.15rem;
+  margin-right: 0.48rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.65;
+  width: 1.15rem;
+}
+
+.resource-icon-github {
+  fill: currentColor;
+  stroke: none;
 }
 
 .section {
